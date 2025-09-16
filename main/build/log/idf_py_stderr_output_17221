@@ -1,0 +1,7 @@
+CMake Error at /home/hyl/esp/esp-idf/tools/cmake/component.cmake:450 (message):
+  Called idf_component_register from a non-component directory.
+Call Stack (most recent call first):
+  /home/hyl/esp/esp-idf/tools/cmake/component.cmake:663 (idf_component_register)
+  CMakeLists.txt:11 (register_component)
+
+

@@ -1,0 +1,14 @@
+CMake Error at CMakeLists.txt:3 (include):
+  include could not find requested file:
+
+    /CMakeLists.txt
+
+
+CMake Error at /home/hyl/esp/esp-idf/tools/cmake/project.cmake:472 (message):
+  Directory specified in EXTRA_COMPONENT_DIRS doesn't exist:
+  /examples/protocols/components/av_stream
+Call Stack (most recent call first):
+  /home/hyl/esp/esp-idf/tools/cmake/project.cmake:556 (__project_init)
+  CMakeLists.txt:9 (project)
+
+

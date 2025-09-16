@@ -1,0 +1,563 @@
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x15 (USB_UART_CHIP_RESET),boot:0x8 (SPI_FAST_FLASH_BOOT)
+Saved PC:0x40048df3
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2820,len:0x16d0
+load:0x403c8700,len:0x4
+load:0x403c8704,len:0xec8
+load:0x403cb700,len:0x3160
+entry 0x403c8950
+[0;32mI (26) boot: ESP-IDF v5.4.2-dirty 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Sep 12 2025 19:17:30[0m
+[0;32mI (27) boot: Multicore bootloader[0m
+[0;32mI (27) boot: chip revision: v0.2[0m
+[0;32mI (30) boot: efuse block revision: v1.3[0m
+[0;32mI (34) qio_mode: Enabling default flash chip QIO[0m
+[0;32mI (38) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (42) boot.esp32s3: SPI Mode       : QIO[0m
+[0;32mI (46) boot.esp32s3: SPI Flash Size : 8MB[0m
+[0;32mI (49) boot: Enabling RNG early entropy source...[0m
+[0;32mI (54) boot: Partition Table:[0m
+[0;32mI (57) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (63) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (69) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (76) boot:  2 factory          factory app      00 00 00010000 00400000[0m
+[0;32mI (82) boot: End of partition table[0m
+[0;32mI (86) esp_image: segment 0: paddr=00010020 vaddr=3c0c0020 size=256cch (153292) map[0m
+[0;32mI (116) esp_image: segment 1: paddr=000356f4 vaddr=3fc95200 size=0746ch ( 29804) load[0m
+[0;32mI (122) esp_image: segment 2: paddr=0003cb68 vaddr=40374000 size=034b0h ( 13488) load[0m
+[0;32mI (125) esp_image: segment 3: paddr=00040020 vaddr=42000020 size=bdd40h (777536) map[0m
+[0;32mI (243) esp_image: segment 4: paddr=000fdd68 vaddr=403774b0 size=0dd30h ( 56624) load[0m
+[0;32mI (254) esp_image: segment 5: paddr=0010baa0 vaddr=600fe000 size=0001ch (    28) load[0m
+[0;32mI (262) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (262) boot: Disabling RNG early entropy source...[0m
+[0;32mI (272) octal_psram: vendor id    : 0x0d (AP)[0m
+[0;32mI (272) octal_psram: dev id       : 0x02 (generation 3)[0m
+[0;32mI (272) octal_psram: density      : 0x03 (64 Mbit)[0m
+[0;32mI (274) octal_psram: good-die     : 0x01 (Pass)[0m
+[0;32mI (278) octal_psram: Latency      : 0x01 (Fixed)[0m
+[0;32mI (283) octal_psram: VCC          : 0x01 (3V)[0m
+[0;32mI (287) octal_psram: SRF          : 0x01 (Fast Refresh)[0m
+[0;32mI (292) octal_psram: BurstType    : 0x01 (Hybrid Wrap)[0m
+[0;32mI (297) octal_psram: BurstLen     : 0x01 (32 Byte)[0m
+[0;32mI (301) octal_psram: Readlatency  : 0x02 (10 cycles@Fixed)[0m
+[0;32mI (306) octal_psram: DriveStrength: 0x00 (1/1)[0m
+[0;32mI (311) esp_psram: Found 8MB PSRAM device[0m
+[0;32mI (314) esp_psram: Speed: 40MHz[0m
+[0;32mI (317) cpu_start: Multicore app[0m
+[0;32mI (1051) esp_psram: SPI SRAM memory test OK[0m
+[0;32mI (1060) cpu_start: Pro cpu start user code[0m
+[0;32mI (1060) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (1060) app_init: Application information:[0m
+[0;32mI (1060) app_init: Project name:     my_rtsp_project[0m
+[0;32mI (1065) app_init: App version:      1.0.0[0m
+[0;32mI (1069) app_init: Compile time:     Sep 12 2025 19:17:25[0m
+[0;32mI (1074) app_init: ELF file SHA256:  cb36ec689...[0m
+[0;32mI (1078) app_init: ESP-IDF:          v5.4.2[0m
+[0;32mI (1082) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (1086) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (1090) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (1094) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (1100) heap_init: At 3FCA15B0 len 00048160 (288 KiB): RAM[0m
+[0;32mI (1106) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (1111) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (1116) heap_init: At 600FE01C len 00001FCC (7 KiB): RTCRAM[0m
+[0;32mI (1122) esp_psram: Adding pool of 8192K of PSRAM memory to heap allocator[0m
+[0;32mI (1129) spi_flash: detected chip: gd[0m
+[0;32mI (1131) spi_flash: flash io: qio[0m
+[0;32mI (1135) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (1141) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (1148) main_task: Started on CPU0[0m
+[0;32mI (1151) esp_psram: Reserving pool of 32K of internal memory for DMA/internal allocations[0m
+[0;32mI (1159) main_task: Calling app_main()[0m
+[0;32mI (1162) ESP_RTSP: Func:app_main, Line:84, MEM Total:8687408 Bytes, Inter:333291 Bytes, Dram:333291 Bytes, Dram largest free:237568Bytes[0m
+
+[0;32mI (1204) ESP_RTSP: [ 1 ] Initialize WiFi[0m
+[0;32mI (1206) pp: pp rom version: e7ae62f[0m
+[0;32mI (1207) net80211: net80211 rom version: e7ae62f[0m
+[0;32mI (1208) wifi:wifi driver task: 3fcb4460, prio:23, stack:6656, core=0[0m
+[0;32mI (1230) wifi:wifi firmware version: bea31f3[0m
+[0;32mI (1230) wifi:wifi certification version: v7.0[0m
+[0;32mI (1230) wifi:config NVS flash: enabled[0m
+[0;32mI (1231) wifi:config nano formatting: disabled[0m
+[0;32mI (1235) wifi:Init data frame dynamic rx buffer num: 128[0m
+[0;32mI (1240) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (1244) wifi:Init management short buffer num: 32[0m
+[0;32mI (1249) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (1253) wifi:Init static tx FG buffer num: 2[0m
+[0;32mI (1257) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (1261) wifi:Init static rx buffer num: 9[0m
+[0;32mI (1265) wifi:Init dynamic rx buffer num: 128[0m
+[0;32mI (1269) wifi_init: rx ba win: 6[0m
+[0;32mI (1272) wifi_init: accept mbox: 6[0m
+[0;32mI (1275) wifi_init: tcpip mbox: 64[0m
+[0;32mI (1278) wifi_init: udp mbox: 64[0m
+[0;32mI (1281) wifi_init: tcp mbox: 64[0m
+[0;32mI (1284) wifi_init: tcp tx win: 65535[0m
+[0;32mI (1287) wifi_init: tcp rx win: 65535[0m
+[0;32mI (1291) wifi_init: tcp mss: 1440[0m
+[0;32mI (1295) phy_init: phy_version 701,f4f1da3a,Mar  3 2025,15:50:10[0m
+[0;32mI (1341) wifi:mode : sta (d8:3b:da:46:fd:78)[0m
+[0;32mI (1342) wifi:enable tsf[0m
+[0;32mI (1344) ESP_RTSP: WiFi initialization completed[0m
+[0;32mI (1345) ESP_RTSP: [ 2 ] Initialize av stream[0m
+[0;32mI (1345) CUSTOM_AUDIO_HAL: Initializing custom audio HAL for XIAO ESP32-S3-Sense[0m
+[0;32mI (1351) wifi:new:<1,1>, old:<1,0>, ap:<255,255>, sta:<1,1>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (1360) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (1365) CUSTOM_AUDIO_HAL: Initializing I2S/PDM microphone: 16000Hz, 16bit, 1ch[0m
+[0;32mI (1371) CUSTOM_AUDIO_HAL: I2S/PDM microphone initialized successfully[0m
+[0;32mI (1377) CUSTOM_AUDIO_HAL: PDM pins: CLK=42, DIN=41[0m
+[0;32mI (1381) CUSTOM_AUDIO_HAL: Starting I2S/PDM microphone recording[0m
+[0;32mI (1387) CUSTOM_AUDIO_HAL: Custom audio HAL initialized successfully[0m
+[0;32mI (1393) CUSTOM_CAMERA_HAL: Initializing custom camera for XIAO ESP32-S3-Sense[0m
+[0;32mI (1400) s3 ll_cam: DMA Channel=1[0m
+[0;32mI (1403) cam_hal: cam init ok[0m
+[0;32mI (1406) sccb-ng: pin_sda 40 pin_scl 39[0m
+[0;32mI (1409) sccb-ng: sccb_i2c_port=0[0m
+[0;32mI (1424) ov3660: Mismatch PID=0x5640[0m
+[0;32mI (1426) camera: Camera PID=0x5640 VER=0x00 MIDL=0x00 MIDH=0x00[0m
+[0;32mI (1426) camera: Detected OV5640 camera[0m
+[0;32mI (1427) camera: Detected camera at address=0x3c[0m
+[0;32mI (2119) cam_hal: PSRAM DMA mode disabled[0m
+[0;32mI (2119) cam_hal: buffer_size: 16384, half_buffer_size: 1024, node_buffer_size: 1024, node_cnt: 16, total_cnt: 30[0m
+[0;32mI (2122) cam_hal: Allocating 30720 Byte frame buffer in PSRAM[0m
+[0;32mI (2127) cam_hal: Allocating 30720 Byte frame buffer in PSRAM[0m
+[0;32mI (2133) cam_hal: cam config ok[0m
+[0;32mI (2148) ov5640: Set PLL: bypass: 0, multiplier: 180, sys_div: 4, pre_div: 2, root_2x: 0, pclk_root_div: 2, pclk_manual: 1, pclk_div: 4[0m
+[0;32mI (2149) ov5640: Calculated XVCLK: 20000000 Hz, REFIN: 10000000 Hz, VCO: 1800000000 Hz, PLL_CLK: 180000000 Hz, SYSCLK: 45000000 Hz, PCLK: 11250000 Hz[0m
+[0;32mI (2183) CUSTOM_CAMERA_HAL: Setting camera flip settings...[0m
+[0;32mI (2186) CUSTOM_CAMERA_HAL: Custom camera initialized successfully[0m
+[0;32mI (2186) ESP_RTSP_SERVER: esp_rtsp ver: 1.1.0 compile date: Sep 27 2024-03:07:26[0m
+[0;32mI (2192) ESP_RTSP_SERVER: RTSP server task started URL: rtsp://0.0.0.0:8554[0m
+[0;32mI (2199) main_task: Returned from app_main()[0m
+[0;32mI (2364) wifi:state: auth -> init (0x200)[0m
+Guru Meditation Error: Core  0 panic'ed (LoadProhibited). Exception was unhandled.
+
+Core  0 register dump:
+PC      : 0x4200aa98  PS      : 0x00060630  A0      : 0x8200c789  A1      : 0x3fcb3bd0  
+A2      : 0x3fca2198  A3      : 0x00000000  A4      : 0x3fca2198  A5      : 0x00000054  
+A6      : 0x00000000  A7      : 0x00000000  A8      : 0x00000000  A9      : 0x3fcb3bb0  
+A10     : 0x3fc9541c  A11     : 0x00000000  A12     : 0x00060420  A13     : 0x00000080  
+A14     : 0x00000001  A15     : 0x3fca20d8  SAR     : 0x00000004  EXCCAUSE: 0x0000001c  
+EXCVADDR: 0x00000000  LBEG    : 0x400556d5  LEND    : 0x400556e5  LCOUNT  : 0xffffffff  
+
+
+Backtrace: 0x4200aa95:0x3fcb3bd0 0x4200c786:0x3fcb3bf0 0x420a20fe:0x3fcb3c10 0x4200bc91:0x3fcb3c30 0x4200c792:0x3fcb3c50 0x420a17f2:0x3fcb3c70 0x420a0d85:0x3fcb3c90 0x420a0dd6:0x3fcb3cb0 0x420a13d5:0x3fcb3cd0 0x420a87e3:0x3fcb3d00 0x420a81ad:0x3fcb3d20 0x420a1869:0x3fcb4040 0x40383aee:0x3fcb4070 0x40383ab9:0x3fcb40a0 0x4206b65f:0x3fcb40f0 0x4206e2f6:0x3fcb4160 0x42077fe7:0x3fcb41c0 0x42079c75:0x3fcb41e0 0x4207714f:0x3fcb4260 0x42073f44:0x3fcb4280 0x42074237:0x3fcb42a0 0x420b3145:0x3fcb42c0 0x4037fd9e:0x3fcb42f0
+
+
+
+
+ELF file SHA256: cb36ec689
+
+Rebooting...
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0xc (RTC_SW_CPU_RST),boot:0x8 (SPI_FAST_FLASH_BOOT)
+Saved PC:0x40375aa9
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2820,len:0x16d0
+load:0x403c8700,len:0x4
+load:0x403c8704,len:0xec8
+load:0x403cb700,len:0x3160
+entry 0x403c8950
+[0;32mI (26) boot: ESP-IDF v5.4.2-dirty 2nd stage bootloader[0m
+[0;32mI (26) boot: compile time Sep 12 2025 19:17:30[0m
+[0;32mI (26) boot: Multicore bootloader[0m
+[0;32mI (27) boot: chip revision: v0.2[0m
+[0;32mI (30) boot: efuse block revision: v1.3[0m
+[0;32mI (33) qio_mode: Enabling default flash chip QIO[0m
+[0;32mI (38) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (41) boot.esp32s3: SPI Mode       : QIO[0m
+[0;32mI (45) boot.esp32s3: SPI Flash Size : 8MB[0m
+[0;32mI (49) boot: Enabling RNG early entropy source...[0m
+[0;32mI (53) boot: Partition Table:[0m
+[0;32mI (56) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (62) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (69) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (75) boot:  2 factory          factory app      00 00 00010000 00400000[0m
+[0;32mI (82) boot: End of partition table[0m
+[0;32mI (85) esp_image: segment 0: paddr=00010020 vaddr=3c0c0020 size=256cch (153292) map[0m
+[0;32mI (115) esp_image: segment 1: paddr=000356f4 vaddr=3fc95200 size=0746ch ( 29804) load[0m
+[0;32mI (121) esp_image: segment 2: paddr=0003cb68 vaddr=40374000 size=034b0h ( 13488) load[0m
+[0;32mI (124) esp_image: segment 3: paddr=00040020 vaddr=42000020 size=bdd40h (777536) map[0m
+[0;32mI (242) esp_image: segment 4: paddr=000fdd68 vaddr=403774b0 size=0dd30h ( 56624) load[0m
+[0;32mI (253) esp_image: segment 5: paddr=0010baa0 vaddr=600fe000 size=0001ch (    28) load[0m
+[0;32mI (261) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (261) boot: Disabling RNG early entropy source...[0m
+[0;32mI (271) octal_psram: vendor id    : 0x0d (AP)[0m
+[0;32mI (271) octal_psram: dev id       : 0x02 (generation 3)[0m
+[0;32mI (272) octal_psram: density      : 0x03 (64 Mbit)[0m
+[0;32mI (274) octal_psram: good-die     : 0x01 (Pass)[0m
+[0;32mI (278) octal_psram: Latency      : 0x01 (Fixed)[0m
+[0;32mI (282) octal_psram: VCC          : 0x01 (3V)[0m
+[0;32mI (286) octal_psram: SRF          : 0x01 (Fast Refresh)[0m
+[0;32mI (291) octal_psram: BurstType    : 0x01 (Hybrid Wrap)[0m
+[0;32mI (296) octal_psram: BurstLen     : 0x01 (32 Byte)[0m
+[0;32mI (301) octal_psram: Readlatency  : 0x02 (10 cycles@Fixed)[0m
+[0;32mI (306) octal_psram: DriveStrength: 0x00 (1/1)[0m
+[0;32mI (310) esp_psram: Found 8MB PSRAM device[0m
+[0;32mI (314) esp_psram: Speed: 40MHz[0m
+[0;32mI (317) cpu_start: Multicore app[0m
+[0;32mI (1051) esp_psram: SPI SRAM memory test OK[0m
+[0;32mI (1059) cpu_start: Pro cpu start user code[0m
+[0;32mI (1059) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (1059) app_init: Application information:[0m
+[0;32mI (1060) app_init: Project name:     my_rtsp_project[0m
+[0;32mI (1064) app_init: App version:      1.0.0[0m
+[0;32mI (1068) app_init: Compile time:     Sep 12 2025 19:17:25[0m
+[0;32mI (1073) app_init: ELF file SHA256:  cb36ec689...[0m
+[0;32mI (1078) app_init: ESP-IDF:          v5.4.2[0m
+[0;32mI (1081) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (1085) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (1089) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (1093) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (1100) heap_init: At 3FCA15B0 len 00048160 (288 KiB): RAM[0m
+[0;32mI (1105) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (1110) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (1116) heap_init: At 600FE01C len 00001FCC (7 KiB): RTCRAM[0m
+[0;32mI (1121) esp_psram: Adding pool of 8192K of PSRAM memory to heap allocator[0m
+[0;32mI (1128) spi_flash: detected chip: gd[0m
+[0;32mI (1131) spi_flash: flash io: qio[0m
+[0;32mI (1134) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (1140) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (1148) main_task: Started on CPU0[0m
+[0;32mI (1151) esp_psram: Reserving pool of 32K of internal memory for DMA/internal allocations[0m
+[0;32mI (1159) main_task: Calling app_main()[0m
+[0;32mI (1162) ESP_RTSP: Func:app_main, Line:84, MEM Total:8687408 Bytes, Inter:333291 Bytes, Dram:333291 Bytes, Dram largest free:237568Bytes[0m
+
+[0;32mI (1204) ESP_RTSP: [ 1 ] Initialize WiFi[0m
+[0;32mI (1206) pp: pp rom version: e7ae62f[0m
+[0;32mI (1206) net80211: net80211 rom version: e7ae62f[0m
+[0;32mI (1208) wifi:wifi driver task: 3fcb4460, prio:23, stack:6656, core=0[0m
+[0;32mI (1230) wifi:wifi firmware version: bea31f3[0m
+[0;32mI (1230) wifi:wifi certification version: v7.0[0m
+[0;32mI (1230) wifi:config NVS flash: enabled[0m
+[0;32mI (1231) wifi:config nano formatting: disabled[0m
+[0;32mI (1235) wifi:Init data frame dynamic rx buffer num: 128[0m
+[0;32mI (1240) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (1244) wifi:Init management short buffer num: 32[0m
+[0;32mI (1249) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (1253) wifi:Init static tx FG buffer num: 2[0m
+[0;32mI (1257) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (1261) wifi:Init static rx buffer num: 9[0m
+[0;32mI (1265) wifi:Init dynamic rx buffer num: 128[0m
+[0;32mI (1269) wifi_init: rx ba win: 6[0m
+[0;32mI (1272) wifi_init: accept mbox: 6[0m
+[0;32mI (1275) wifi_init: tcpip mbox: 64[0m
+[0;32mI (1278) wifi_init: udp mbox: 64[0m
+[0;32mI (1281) wifi_init: tcp mbox: 64[0m
+[0;32mI (1284) wifi_init: tcp tx win: 65535[0m
+[0;32mI (1287) wifi_init: tcp rx win: 65535[0m
+[0;32mI (1291) wifi_init: tcp mss: 1440[0m
+[0;32mI (1295) phy_init: phy_version 701,f4f1da3a,Mar  3 2025,15:50:10[0m
+[0;32mI (1342) wifi:mode : sta (d8:3b:da:46:fd:78)[0m
+[0;32mI (1343) wifi:enable tsf[0m
+[0;32mI (1345) ESP_RTSP: WiFi initialization completed[0m
+[0;32mI (1345) ESP_RTSP: [ 2 ] Initialize av stream[0m
+[0;32mI (1346) CUSTOM_AUDIO_HAL: Initializing custom audio HAL for XIAO ESP32-S3-Sense[0m
+[0;32mI (1353) CUSTOM_AUDIO_HAL: Initializing I2S/PDM microphone: 16000Hz, 16bit, 1ch[0m
+[0;32mI (1361) CUSTOM_AUDIO_HAL: I2S/PDM microphone initialized successfully[0m
+[0;32mI (1367) CUSTOM_AUDIO_HAL: PDM pins: CLK=42, DIN=41[0m
+[0;32mI (1371) CUSTOM_AUDIO_HAL: Starting I2S/PDM microphone recording[0m
+[0;32mI (1377) CUSTOM_AUDIO_HAL: Custom audio HAL initialized successfully[0m
+[0;32mI (1383) CUSTOM_CAMERA_HAL: Initializing custom camera for XIAO ESP32-S3-Sense[0m
+[0;32mI (1390) s3 ll_cam: DMA Channel=1[0m
+[0;32mI (1393) cam_hal: cam init ok[0m
+[0;32mI (1396) sccb-ng: pin_sda 40 pin_scl 39[0m
+[0;32mI (1399) wifi:new:<1,1>, old:<1,0>, ap:<255,255>, sta:<1,1>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (1407) wifi:state: init -> auth (0xb0)[0m
+Guru Meditation Error: Core  0 panic'ed (LoadProhibited). Exception was unhandled.
+
+Core  0 register dump:
+PC      : 0x4200aa98  PS      : 0x00060c30  A0      : 0x8200c789  A1      : 0x3fca4ad0  
+A2      : 0x3fca2198  A3      : 0x00000000  A4      : 0x3fca2198  A5      : 0x00000022  
+A6      : 0x00000000  A7      : 0x00000000  A8      : 0x00000000  A9      : 0x3fca4ab0  
+A10     : 0x3fc9541c  A11     : 0x00000000  A12     : 0x00060a20  A13     : 0x00000080  
+A14     : 0x3fc95338  A15     : 0xffffffff  SAR     : 0x00000004  EXCCAUSE: 0x0000001c  
+EXCVADDR: 0x00000000  LBEG    : 0x400556d5  LEND    : 0x400556e5  LCOUNT  : 0xfffffffd  
+
+
+Backtrace: 0x4200aa95:0x3fca4ad0 0x4200c786:0x3fca4af0 0x420a20fe:0x3fca4b10 0x4200bc91:0x3fca4b30 0x4200c792:0x3fca4b50 0x420a17f2:0x3fca4b70 0x420a0d85:0x3fca4b90 0x420a0dd6:0x3fca4bb0 0x420a13d5:0x3fca4bd0 0x420a87e3:0x3fca4c00 0x420a81ea:0x3fca4c20 0x420a1869:0x3fca4f40 0x40383aee:0x3fca4f70 0x40383ab9:0x3fca4fa0 0x42023238:0x3fca4ff0 0x42017fae:0x3fca5050 0x4201823e:0x3fca50b0 0x4200f8ff:0x3fca50f0 0x4200f512:0x3fca5110 0x4200dde9:0x3fca5130 0x420ba292:0x3fca5180 0x4037fd9e:0x3fca51b0
+
+
+
+
+ELF file SHA256: cb36ec689
+
+Rebooting...
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0xc (RTC_SW_CPU_RST),boot:0x8 (SPI_FAST_FLASH_BOOT)
+Saved PC:0x40375aa9
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2820,len:0x16d0
+load:0x403c8700,len:0x4
+load:0x403c8704,len:0xec8
+load:0x403cb700,len:0x3160
+entry 0x403c8950
+[0;32mI (26) boot: ESP-IDF v5.4.2-dirty 2nd stage bootloader[0m
+[0;32mI (26) boot: compile time Sep 12 2025 19:17:30[0m
+[0;32mI (26) boot: Multicore bootloader[0m
+[0;32mI (27) boot: chip revision: v0.2[0m
+[0;32mI (30) boot: efuse block revision: v1.3[0m
+[0;32mI (33) qio_mode: Enabling default flash chip QIO[0m
+[0;32mI (38) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (41) boot.esp32s3: SPI Mode       : QIO[0m
+[0;32mI (45) boot.esp32s3: SPI Flash Size : 8MB[0m
+[0;32mI (49) boot: Enabling RNG early entropy source...[0m
+[0;32mI (53) boot: Partition Table:[0m
+[0;32mI (56) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (62) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (69) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (75) boot:  2 factory          factory app      00 00 00010000 00400000[0m
+[0;32mI (82) boot: End of partition table[0m
+[0;32mI (85) esp_image: segment 0: paddr=00010020 vaddr=3c0c0020 size=256cch (153292) map[0m
+[0;32mI (115) esp_image: segment 1: paddr=000356f4 vaddr=3fc95200 size=0746ch ( 29804) load[0m
+[0;32mI (121) esp_image: segment 2: paddr=0003cb68 vaddr=40374000 size=034b0h ( 13488) load[0m
+[0;32mI (124) esp_image: segment 3: paddr=00040020 vaddr=42000020 size=bdd40h (777536) map[0m
+[0;32mI (242) esp_image: segment 4: paddr=000fdd68 vaddr=403774b0 size=0dd30h ( 56624) load[0m
+[0;32mI (253) esp_image: segment 5: paddr=0010baa0 vaddr=600fe000 size=0001ch (    28) load[0m
+[0;32mI (261) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (261) boot: Disabling RNG early entropy source...[0m
+[0;32mI (271) octal_psram: vendor id    : 0x0d (AP)[0m
+[0;32mI (271) octal_psram: dev id       : 0x02 (generation 3)[0m
+[0;32mI (272) octal_psram: density      : 0x03 (64 Mbit)[0m
+[0;32mI (274) octal_psram: good-die     : 0x01 (Pass)[0m
+[0;32mI (278) octal_psram: Latency      : 0x01 (Fixed)[0m
+[0;32mI (282) octal_psram: VCC          : 0x01 (3V)[0m
+[0;32mI (286) octal_psram: SRF          : 0x01 (Fast Refresh)[0m
+[0;32mI (291) octal_psram: BurstType    : 0x01 (Hybrid Wrap)[0m
+[0;32mI (296) octal_psram: BurstLen     : 0x01 (32 Byte)[0m
+[0;32mI (301) octal_psram: Readlatency  : 0x02 (10 cycles@Fixed)[0m
+[0;32mI (306) octal_psram: DriveStrength: 0x00 (1/1)[0m
+[0;32mI (310) esp_psram: Found 8MB PSRAM device[0m
+[0;32mI (314) esp_psram: Speed: 40MHz[0m
+[0;32mI (317) cpu_start: Multicore app[0m
+[0;32mI (1051) esp_psram: SPI SRAM memory test OK[0m
+[0;32mI (1059) cpu_start: Pro cpu start user code[0m
+[0;32mI (1059) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (1059) app_init: Application information:[0m
+[0;32mI (1060) app_init: Project name:     my_rtsp_project[0m
+[0;32mI (1064) app_init: App version:      1.0.0[0m
+[0;32mI (1068) app_init: Compile time:     Sep 12 2025 19:17:25[0m
+[0;32mI (1073) app_init: ELF file SHA256:  cb36ec689...[0m
+[0;32mI (1078) app_init: ESP-IDF:          v5.4.2[0m
+[0;32mI (1081) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (1085) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (1089) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (1093) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (1100) heap_init: At 3FCA15B0 len 00048160 (288 KiB): RAM[0m
+[0;32mI (1105) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (1110) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (1116) heap_init: At 600FE01C len 00001FCC (7 KiB): RTCRAM[0m
+[0;32mI (1121) esp_psram: Adding pool of 8192K of PSRAM memory to heap allocator[0m
+[0;32mI (1128) spi_flash: detected chip: gd[0m
+[0;32mI (1131) spi_flash: flash io: qio[0m
+[0;32mI (1134) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (1140) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (1148) main_task: Started on CPU0[0m
+[0;32mI (1151) esp_psram: Reserving pool of 32K of internal memory for DMA/internal allocations[0m
+[0;32mI (1159) main_task: Calling app_main()[0m
+[0;32mI (1162) ESP_RTSP: Func:app_main, Line:84, MEM Total:8687408 Bytes, Inter:333291 Bytes, Dram:333291 Bytes, Dram largest free:237568Bytes[0m
+
+[0;32mI (1204) ESP_RTSP: [ 1 ] Initialize WiFi[0m
+[0;32mI (1206) pp: pp rom version: e7ae62f[0m
+[0;32mI (1206) net80211: net80211 rom version: e7ae62f[0m
+[0;32mI (1208) wifi:wifi driver task: 3fcb4460, prio:23, stack:6656, core=0[0m
+[0;32mI (1230) wifi:wifi firmware version: bea31f3[0m
+[0;32mI (1230) wifi:wifi certification version: v7.0[0m
+[0;32mI (1230) wifi:config NVS flash: enabled[0m
+[0;32mI (1231) wifi:config nano formatting: disabled[0m
+[0;32mI (1235) wifi:Init data frame dynamic rx buffer num: 128[0m
+[0;32mI (1240) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (1244) wifi:Init management short buffer num: 32[0m
+[0;32mI (1249) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (1253) wifi:Init static tx FG buffer num: 2[0m
+[0;32mI (1257) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (1261) wifi:Init static rx buffer num: 9[0m
+[0;32mI (1265) wifi:Init dynamic rx buffer num: 128[0m
+[0;32mI (1269) wifi_init: rx ba win: 6[0m
+[0;32mI (1272) wifi_init: accept mbox: 6[0m
+[0;32mI (1275) wifi_init: tcpip mbox: 64[0m
+[0;32mI (1278) wifi_init: udp mbox: 64[0m
+[0;32mI (1281) wifi_init: tcp mbox: 64[0m
+[0;32mI (1284) wifi_init: tcp tx win: 65535[0m
+[0;32mI (1287) wifi_init: tcp rx win: 65535[0m
+[0;32mI (1291) wifi_init: tcp mss: 1440[0m
+[0;32mI (1295) phy_init: phy_version 701,f4f1da3a,Mar  3 2025,15:50:10[0m
+[0;32mI (1346) wifi:mode : sta (d8:3b:da:46:fd:78)[0m
+[0;32mI (1346) wifi:enable tsf[0m
+[0;32mI (1349) ESP_RTSP: WiFi initialization completed[0m
+[0;32mI (1349) ESP_RTSP: [ 2 ] Initialize av stream[0m
+[0;32mI (1350) CUSTOM_AUDIO_HAL: Initializing custom audio HAL for XIAO ESP32-S3-Sense[0m
+[0;32mI (1355) wifi:new:<1,1>, old:<1,0>, ap:<255,255>, sta:<1,1>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (1365) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (1369) CUSTOM_AUDIO_HAL: Initializing I2S/PDM microphone: 16000Hz, 16bit, 1ch[0m
+[0;32mI (1376) CUSTOM_AUDIO_HAL: I2S/PDM microphone initialized successfully[0m
+[0;32mI (1377) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (1386) CUSTOM_AUDIO_HAL: PDM pins: CLK=42, DIN=41[0m
+[0;32mI (1390) CUSTOM_AUDIO_HAL: Starting I2S/PDM microphone recording[0m
+[0;32mI (1394) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (1402) CUSTOM_AUDIO_HAL: Custom audio HAL initialized successfully[0m
+[0;32mI (1405) CUSTOM_CAMERA_HAL: Initializing custom camera for XIAO ESP32-S3-Sense[0m
+[0;32mI (1416) s3 ll_cam: DMA Channel=2[0m
+[0;32mI (1416) wifi:connected with skyris_debug, aid = 1, channel 1, 40U, bssid = 02:95:c0:3c:86:1c[0m
+[0;32mI (1423) wifi:security: WPA2-PSK, phy: bgn, rssi: -58[0m
+[0;32mI (1433) wifi:pm start, type: 1[0m
+
+[0;32mI (1433) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (1439) wifi:set rx beacon pti, rx_bcn_pti: 0, bcn_timeout: 25000, mt_pti: 0, mt_time: 10000[0m
+[0;32mI (1448) cam_hal: cam init ok[0m
+[0;32mI (1450) sccb-ng: pin_sda 40 pin_scl 39[0m
+[0;32mI (1453) sccb-ng: sccb_i2c_port=0[0m
+[0;32mI (1468) ov3660: Mismatch PID=0x5640[0m
+[0;32mI (1470) camera: Camera PID=0x5640 VER=0x00 MIDL=0x00 MIDH=0x00[0m
+[0;32mI (1470) camera: Detected OV5640 camera[0m
+[0;32mI (1471) camera: Detected camera at address=0x3c[0m
+[0;32mI (1513) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (2165) cam_hal: PSRAM DMA mode disabled[0m
+[0;32mI (2165) cam_hal: buffer_size: 16384, half_buffer_size: 1024, node_buffer_size: 1024, node_cnt: 16, total_cnt: 30[0m
+[0;32mI (2168) cam_hal: Allocating 30720 Byte frame buffer in PSRAM[0m
+[0;32mI (2173) cam_hal: Allocating 30720 Byte frame buffer in PSRAM[0m
+[0;32mI (2179) cam_hal: cam config ok[0m
+[0;32mI (2194) ov5640: Set PLL: bypass: 0, multiplier: 180, sys_div: 4, pre_div: 2, root_2x: 0, pclk_root_div: 2, pclk_manual: 1, pclk_div: 4[0m
+[0;32mI (2195) ov5640: Calculated XVCLK: 20000000 Hz, REFIN: 10000000 Hz, VCO: 1800000000 Hz, PLL_CLK: 180000000 Hz, SYSCLK: 45000000 Hz, PCLK: 11250000 Hz[0m
+[0;32mI (2229) CUSTOM_CAMERA_HAL: Setting camera flip settings...[0m
+[0;32mI (2232) CUSTOM_CAMERA_HAL: Custom camera initialized successfully[0m
+[0;32mI (2233) ESP_RTSP_SERVER: esp_rtsp ver: 1.1.0 compile date: Sep 27 2024-03:07:26[0m
+[0;32mI (2239) ESP_RTSP_SERVER: RTSP server task started URL: rtsp://0.0.0.0:8554[0m
+[0;32mI (2245) main_task: Returned from app_main()[0m
+[0;32mI (2500) ESP_RTSP: WiFi connected! IP: 192.168.3.8[0m
+[0;32mI (2500) ESP_RTSP: RTSP URL: rtsp://192.168.3.8:8554/live[0m
+[0;32mI (2500) esp_netif_handlers: sta ip: 192.168.3.8, mask: 255.255.255.0, gw: 192.168.3.1[0m
+[0;32mI (23839) wifi:<ba-add>idx:0 (ifx:0, 02:95:c0:3c:86:1c), tid:0, ssn:1, winSize:64[0m
+[0;32mI (32453) ESP_RTSP_SERVER: RTSP Client ip address: 192.168.3.9[0m
+[0;32mI (32454) ESP_RTSP_SERVER: RX:
+
+OPTIONS rtsp://192.168.3.8:8554/stream RTSP/1.0
+CSeq: 1
+User-Agent: Lavf58.76.100
+
+[0m
+[0;32mI (32461) ESP_RTSP_SERVER: RTSP received [OPTIONS], len 87[0m
+[0;32mI (32468) ESP_RTSP_SERVER: TX:
+
+RTSP/1.0 200 OK
+CSeq: 1
+Public: OPTIONS, DESCRIBE, SETUP, PLAY, TEARDOWN
+Server: ESP32-RTSP-Server 1.1.0
+
+[0m
+[0;32mI (32516) ESP_RTSP_SERVER: RX:
+
+DESCRIBE rtsp://192.168.3.8:8554/stream RTSP/1.0
+Accept: application/sdp
+CSeq: 2
+User-Agent: Lavf58.76.100
+
+[0m
+[0;32mI (32519) ESP_RTSP_SERVER: RTSP received [DESCRIBE], len 113[0m
+[0;32mI (32526) ESP_RTSP_SERVER: TX:
+
+RTSP/1.0 200 OK
+CSeq: 2
+Content-Type: application/sdp
+Content-Length: 205 
+
+v=0
+o=Z 0 3 IN IP4 0.0.0.0
+s=Z
+t=0 0
+c=IN IP4 0.0.0.0
+m=audio 0 RTP/AVP 8 101
+a=rtpmap:8 PCMA/8000
+a=rtpmap:101 telephone-event/8000
+a=control:trackID=0
+m=video 0 RTP/AVP 26
+a=control:trackID=1
+[0m
+[0;32mI (32567) ESP_RTSP_SERVER: RX:
+
+SETUP rtsp://192.168.3.8:8554/stream/trackID=0 RTSP/1.0
+Transport: RTP/AVP/TCP;unicast;interleaved=0-1
+CSeq: 3
+User-Agent: Lavf58.76.100
+
+[0m
+[0;32mI (32573) ESP_RTSP_SERVER: RTSP received [SETUP], len 143[0m
+[0;32mI (32580) RTSP_SERVICE: RTSP_STATE_SETUP[0m
+[0;32mI (32583) ESP_RTSP_SERVER: TX:
+
+RTSP/1.0 200 OK
+Transport: RTP/AVP/TCP;unicast;interleaved=0-1
+CSeq: 3
+Session: 4191868
+
+[0m
+[0;32mI (32605) ESP_RTSP_SERVER: RX:
+
+SETUP rtsp://192.168.3.8:8554/stream/trackID=1 RTSP/1.0
+Transport: RTP/AVP/TCP;unicast;interleaved=2-3
+CSeq: 4
+User-Agent: Lavf58.76.100
+Session: 4191868
+
+[0m
+[0;32mI (32615) ESP_RTSP_SERVER: RTSP received [SETUP], len 161[0m
+[0;32mI (32621) RTSP_SERVICE: RTSP_STATE_SETUP[0m
+[0;32mI (32625) ESP_RTSP_SERVER: TX:
+
+RTSP/1.0 200 OK
+Transport: RTP/AVP/TCP;unicast;interleaved=2-3
+CSeq: 4
+Session: 4191868
+
+[0m
+[0;32mI (32650) ESP_RTSP_SERVER: RX:
+
+PLAY rtsp://192.168.3.8:8554/stream RTSP/1.0
+Range: npt=0.000-
+CSeq: 5
+User-Agent: Lavf58.76.100
+Session: 4191868
+
+[0m
+[0;32mI (32654) ESP_RTSP_SERVER: RTSP received [PLAY], len 121[0m
+[0;33mW (32661) AV_STREAM: Resampling disabled, using raw audio data[0m
+[0;32mI (32666) AUDIO_PIPELINE: Func:audio_pipeline_run, Line:359, MEM Total:8539284 Bytes, Inter:257787 Bytes, Dram:257787 Bytes, Dram largest free:159744Bytes[0m
+
+[0;32mI (32680) AUDIO_PIPELINE: Pipeline started[0m
+[0;32mI (32683) AUDIO_THREAD: The _audio_enc task allocate stack on external memory[0m
+[0;32mI (32691) AV_STREAM: audio_enc started[0m
+[0;32mI (32694) AUDIO_THREAD: The _video_enc task allocate stack on external memory[0m
+[0;32mI (32702) RTSP_SERVICE: RTSP_STATE_PLAY[0m
+[0;32mI (32717) ESP_RTSP_SERVER: TX:
+
+RTSP/1.0 200 OK
+CSeq: 5
+Session: 4191868
+
+[0m
+[0;32mI (52753) ESP_RTSP_SERVER: RX:
+
+TEARDOWN rtsp://192.168.3.8:8554/stream RTSP/1.0
+CSeq: 6
+User-Agent: Lavf58.76.100
+Session: 4191868
+
+[0m
+[0;32mI (52756) ESP_RTSP_SERVER: RTSP received [TEARDOWN], len 106[0m
+[0;32mI (52763) ESP_RTSP_SERVER: TX:
+
+RTSP/1.0 200 OK
+CSeq: 6
+
+[0m
+[0;32mI (52782) AV_STREAM: _audio_enc task stoped[0m
+[0;32mI (52866) AV_STREAM: _video_enc task stoped[0m
+[0;32mI (52867) RTSP_SERVICE: RTSP_STATE_TEARDOWN[0m
+[0;32mI (52867) ESP_RTSP_SERVER: Remote RTSP client exit[0m

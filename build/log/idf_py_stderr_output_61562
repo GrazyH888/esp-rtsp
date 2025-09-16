@@ -1,0 +1,214 @@
+[0;33m--- esp-idf-monitor 1.7.0 on /dev/ttyACM0 115200[0m
+[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H[0m
+[0m--- 0x400490e9: [0;33musb_uart_device_rx_one_char[0m[0m in [0;32mROM[0m
+[0m--- 0x40056f0d: [0;33m__memcpy_aux[0m[0m in [0;32mROM[0m
+[0m--- 0x40056f08: [0;33m__memcpy_aux[0m[0m in [0;32mROM[0m
+[0m--- 0x40056f12: [0;33m__memcpy_aux[0m[0m in [0;32mROM[0m
+[0m--- 0x40056f0a: [0;33m__memcpy_aux[0m[0m in [0;32mROM[0m
+[0m--- 0x403800fb: [0;33mprvCopyDataToQueue[0m[0m at [0;32m/home/hyl/esp/esp-idf/components/freertos/FreeRTOS-Kernel/queue.c[0m[0m:[1;31m2481[0m
+[0m--- 0x403802c6: [0;33mxQueueGenericSendFromISR[0m[0m at [0;32m/home/hyl/esp/esp-idf/components/freertos/FreeRTOS-Kernel/queue.c[0m[0m:[1;31m1224[0m
+[0m--- 0x40378c35: [0;33mi2s_dma_rx_callback[0m[0m at [0;32m/home/hyl/esp/esp-idf/components/esp_driver_i2s/i2s_common.c[0m[0m:[1;31m609[0m
+[0m--- 0x4037d3b5: [0;33mgdma_default_rx_isr[0m[0m at [0;32m/home/hyl/esp/esp-idf/components/esp_hw_support/dma/gdma.c[0m[0m:[1;31m819[0m
+[0m--- 0x4037785d: [0;33m_xt_lowint1[0m[0m at [0;32m/home/hyl/esp/esp-idf/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x400559dd: [0;33m_xtos_set_intlevel[0m[0m in [0;32mROM[0m
+[0m--- 0x4037ffce: [0;33mvPortClearInterruptMaskFromISR[0m[0m at [0;32m/home/hyl/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos/portmacro.h[0m[0m:[1;31m560[0m
+[0m--- (inlined by) [0;33mvPortExitCritical[0m[0m at [0;32m/home/hyl/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m514[0m
+[0m--- 0x40376853: [0;33mvPortExitCriticalSafe[0m[0m at [0;32m/home/hyl/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos/portmacro.h[0m[0m:[1;31m596[0m
+[0m--- (inlined by) [0;33mesp_intr_noniram_enable[0m[0m at [0;32m/home/hyl/esp/esp-idf/components/esp_hw_support/intr_alloc.c[0m[0m:[1;31m951[0m
+[0m--- 0x40377fc3: [0;33mspi_flash_enable_interrupts_caches_and_other_cpu[0m[0m at [0;32m/home/hyl/esp/esp-idf/components/spi_flash/cache_utils.c[0m[0m:[1;31m246[0m
+[0m--- 0x4037877b: [0;33mcache_enable[0m[0m at [0;32m/home/hyl/esp/esp-idf/components/spi_flash/spi_flash_os_func_app.c[0m[0m:[1;31m65[0m
+[0m--- 0x40378786: [0;33mspi1_end[0m[0m at [0;32m/home/hyl/esp/esp-idf/components/spi_flash/spi_flash_os_func_app.c[0m[0m:[1;31m154[0m
+[0m--- 0x4004b071: [0;33mspiflash_end_default[0m[0m in [0;32mROM[0m
+[0m--- 0x4004b4bf: [0;33mesp_flash_erase_region[0m[0m in [0;32mROM[0m
+[0m--- 0x40378426: [0;33mesp_flash_erase_region[0m[0m at [0;32m/home/hyl/esp/esp-idf/components/spi_flash/esp_flash_api.c[0m[0m:[1;31m721[0m
+[0m--- 0x42089b69: [0;33mesp_partition_erase_range[0m[0m at [0;32m/home/hyl/esp/esp-idf/components/esp_partition/partition_target.c[0m[0m:[1;31m143[0m
+[0m--- 0x42028271: [0;33mnvs::NVSPartition::erase_range(unsigned int, unsigned int)[0m[0m at [0;32m/home/hyl/esp/esp-idf/components/nvs_flash/src/nvs_partition.cpp[0m[0m:[1;31m56[0m
+[0m--- 0x420288f7: [0;33mnvs::Page::erase()[0m[0m at [0;32m/home/hyl/esp/esp-idf/components/nvs_flash/src/nvs_page.cpp[0m[0m:[1;31m1026[0m
+[0m--- 0x4202993e: [0;33mnvs::PageManager::activatePage()[0m[0m at [0;32m/home/hyl/esp/esp-idf/components/nvs_flash/src/nvs_pagemanager.cpp[0m[0m:[1;31m205[0m
+[0m--- 0x420299b4: [0;33mnvs::PageManager::requestNewPage()[0m[0m at [0;32m/home/hyl/esp/esp-idf/components/nvs_flash/src/nvs_pagemanager.cpp[0m[0m:[1;31m162[0m
+[0m--- 0x42027afe: [0;33mnvs::Storage::writeMultiPageBlob(unsigned char, char const*, void const*, unsigned int, nvs::VerOffset)[0m[0m at [0;32m/home/hyl/esp/esp-idf/components/nvs_flash/src/nvs_storage.cpp[0m[0m:[1;31m301[0m
+[0m--- 0x42027d57: [0;33mnvs::Storage::writeItem(unsigned char, nvs::ItemType, char const*, void const*, unsigned int)[0m[0m at [0;32m/home/hyl/esp/esp-idf/components/nvs_flash/src/nvs_storage.cpp[0m[0m:[1;31m437[0m
+[0m--- 0x4202801d: [0;33mnvs::NVSHandleSimple::set_blob(char const*, void const*, unsigned int)[0m[0m at [0;32m/home/hyl/esp/esp-idf/components/nvs_flash/src/nvs_handle_simple.cpp[0m[0m:[1;31m44[0m
+[0m--- 0x42026b8b: [0;33mnvs_set_blob[0m[0m at [0;32m/home/hyl/esp/esp-idf/components/nvs_flash/src/nvs_api.cpp[0m[0m:[1;31m442[0m
+[0m--- 0x4206fc39: [0;33mwifi_nvs_set[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x42071adf: [0;33mwifi_station_save_ap_channel[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x42078a0d: [0;33mcnx_auth_done[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x42070962: [0;33mesp_wifi_auth_done_internal[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x4208cb93: [0;33mwpa_neg_complete[0m[0m at [0;32m/home/hyl/esp/esp-idf/components/wpa_supplicant/esp_supplicant/src/esp_wpa_main.c[0m[0m:[1;31m132[0m
+[0m--- 0x42096a51: [0;33mwpa_supplicant_key_neg_complete[0m[0m at [0;32m/home/hyl/esp/esp-idf/components/wpa_supplicant/src/rsn_supp/wpa.c[0m[0m:[1;31m828[0m
+[0m--- 0x4209771d: [0;33mwpa_supplicant_send_4_of_4_txcallback[0m[0m at [0;32m/home/hyl/esp/esp-idf/components/wpa_supplicant/src/rsn_supp/wpa.c[0m[0m:[1;31m1404[0m
+[0m--- 0x42097893: [0;33meapol_txcb[0m[0m at [0;32m/home/hyl/esp/esp-idf/components/wpa_supplicant/src/rsn_supp/wpa.c[0m[0m:[1;31m2652[0m
+[0m--- 0x42078e21: [0;33msta_eapol_txdone_cb[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x4003f58a: [0;33mppProcTxCallback[0m[0m in [0;32mROM[0m
+[0m--- 0x4003b1ff: [0;33mlmacTxDone[0m[0m in [0;32mROM[0m
+[0m--- 0x4003b0d5: [0;33mlmacRecycleMPDU[0m[0m in [0;32mROM[0m
+[0m--- 0x420b36f1: [0;33mlmacEndFrameExchangeSequence[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x420b4b27: [0;33mlmacProcessTxSuccess[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x420b4bfd: [0;33mlmacProcessTxComplete[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x420b319d: [0;33mppTask[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x4037fd9e: [0;33mvPortTaskWrapper[0m[0m at [0;32m/home/hyl/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x40375aa9: [0;33mesp_restart_noos[0m[0m at [0;32m/home/hyl/esp/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c[0m[0m:[1;31m162[0m
+[0m--- 0x4200aa98: [0;33muart_write[0m[0m at [0;32m/home/hyl/esp/esp-idf/components/esp_driver_uart/src/uart_vfs.c[0m[0m:[1;31m236[0m
+[0m--- 0x400556d5: [0;33mstrlen[0m[0m in [0;32mROM[0m
+[0m--- 0x400556e5: [0;33mstrlen[0m[0m in [0;32mROM[0m
+[0m--- 0x4200aa95: [0;33muart_write[0m[0m at [0;32m/home/hyl/esp/esp-idf/components/esp_driver_uart/src/uart_vfs.c[0m[0m:[1;31m235[0m
+[0m--- 0x4200c786: [0;33mesp_vfs_write[0m[0m at [0;32m/home/hyl/esp/esp-idf/components/vfs/vfs.c[0m[0m:[1;31m945[0m
+[0m--- 0x420a20fe: [0;33mwrite[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/syscalls/syswrite.c[0m[0m:[1;31m11[0m
+[0m--- 0x4200bc91: [0;33mconsole_write[0m[0m at [0;32m/home/hyl/esp/esp-idf/components/esp_vfs_console/vfs_console.c[0m[0m:[1;31m83[0m
+[0m--- 0x4200c792: [0;33mesp_vfs_write[0m[0m at [0;32m/home/hyl/esp/esp-idf/components/vfs/vfs.c[0m[0m:[1;31m945[0m
+[0m--- 0x420a17f2: [0;33m__swrite[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/stdio.c[0m[0m:[1;31m94[0m
+[0m--- 0x420a0d85: [0;33m__sflush_r[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/fflush.c[0m[0m:[1;31m224[0m
+[0m--- 0x420a0dd6: [0;33m_fflush_r[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/fflush.c[0m[0m:[1;31m278[0m
+[0m--- 0x420a13d5: [0;33m__sfvwrite_r[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/fvwrite.c[0m[0m:[1;31m251[0m
+[0m--- 0x420a87e3: [0;33m__sprint_r[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c[0m[0m:[1;31m429[0m
+[0m--- (inlined by) [0;33m__sprint_r[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c[0m[0m:[1;31m399[0m
+[0m--- 0x420a81ad: [0;33m_vfprintf_r[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c[0m[0m:[1;31m1766[0m
+[0m--- 0x420a1869: [0;33mvprintf[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vprintf.c[0m[0m:[1;31m34[0m
+[0m--- 0x40383aee: [0;33mesp_log_writev[0m[0m at [0;32m/home/hyl/esp/esp-idf/components/log/src/os/log_write.c[0m[0m:[1;31m34[0m
+[0m--- 0x40383ab9: [0;33mesp_log_write[0m[0m at [0;32m/home/hyl/esp/esp-idf/components/log/src/os/log_write.c[0m[0m:[1;31m44[0m
+[0m--- 0x4206b65f: [0;33mwifi_log[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x4206e2f6: [0;33mieee80211_update_channel[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x42077fe7: [0;33mcnx_sta_leave[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x42079c75: [0;33mieee80211_sta_new_state[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x4207714f: [0;33mcnx_auth_timeout_process[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x42073f44: [0;33mieee80211_ap_sa_query_timeout[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x42074237: [0;33mieee80211_timer_do_process[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x420b3145: [0;33mppTask[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x4037fd9e: [0;33mvPortTaskWrapper[0m[0m at [0;32m/home/hyl/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x40375aa9: [0;33mesp_restart_noos[0m[0m at [0;32m/home/hyl/esp/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c[0m[0m:[1;31m162[0m
+[0m--- 0x4200aa98: [0;33muart_write[0m[0m at [0;32m/home/hyl/esp/esp-idf/components/esp_driver_uart/src/uart_vfs.c[0m[0m:[1;31m236[0m
+[0m--- 0x400556d5: [0;33mstrlen[0m[0m in [0;32mROM[0m
+[0m--- 0x400556e5: [0;33mstrlen[0m[0m in [0;32mROM[0m
+[0m--- 0x4200aa95: [0;33muart_write[0m[0m at [0;32m/home/hyl/esp/esp-idf/components/esp_driver_uart/src/uart_vfs.c[0m[0m:[1;31m235[0m
+[0m--- 0x4200c786: [0;33mesp_vfs_write[0m[0m at [0;32m/home/hyl/esp/esp-idf/components/vfs/vfs.c[0m[0m:[1;31m945[0m
+[0m--- 0x420a20fe: [0;33mwrite[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/syscalls/syswrite.c[0m[0m:[1;31m11[0m
+[0m--- 0x4200bc91: [0;33mconsole_write[0m[0m at [0;32m/home/hyl/esp/esp-idf/components/esp_vfs_console/vfs_console.c[0m[0m:[1;31m83[0m
+[0m--- 0x4200c792: [0;33mesp_vfs_write[0m[0m at [0;32m/home/hyl/esp/esp-idf/components/vfs/vfs.c[0m[0m:[1;31m945[0m
+[0m--- 0x420a17f2: [0;33m__swrite[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/stdio.c[0m[0m:[1;31m94[0m
+[0m--- 0x420a0d85: [0;33m__sflush_r[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/fflush.c[0m[0m:[1;31m224[0m
+[0m--- 0x420a0dd6: [0;33m_fflush_r[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/fflush.c[0m[0m:[1;31m278[0m
+[0m--- 0x420a13d5: [0;33m__sfvwrite_r[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/fvwrite.c[0m[0m:[1;31m251[0m
+[0m--- 0x420a87e3: [0;33m__sprint_r[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c[0m[0m:[1;31m429[0m
+[0m--- (inlined by) [0;33m__sprint_r[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c[0m[0m:[1;31m399[0m
+[0m--- 0x420a81ea: [0;33m_vfprintf_r[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c[0m[0m:[1;31m1774[0m
+[0m--- 0x420a1869: [0;33mvprintf[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vprintf.c[0m[0m:[1;31m34[0m
+[0m--- 0x40383aee: [0;33mesp_log_writev[0m[0m at [0;32m/home/hyl/esp/esp-idf/components/log/src/os/log_write.c[0m[0m:[1;31m34[0m
+[0m--- 0x40383ab9: [0;33mesp_log_write[0m[0m at [0;32m/home/hyl/esp/esp-idf/components/log/src/os/log_write.c[0m[0m:[1;31m44[0m
+[0m--- 0x4200f565: [0;33mcustom_i2s_mic_init[0m[0m at [0;32m/home/hyl/work/rtsp/my_rtsp_project/components/av_stream/av_stream_hal/custom_audio_hal.c[0m[0m:[1;31m42[0m
+[0m--- 0x4200f86b: [0;33mcustom_av_stream_audio_init[0m[0m at [0;32m/home/hyl/work/rtsp/my_rtsp_project/components/av_stream/av_stream_hal/custom_audio_hal.c[0m[0m:[1;31m200[0m
+[0m--- 0x4200f4fe: [0;33mav_stream_init[0m[0m at [0;32m/home/hyl/work/rtsp/my_rtsp_project/components/av_stream/av_stream.c[0m[0m:[1;31m537[0m
+[0m--- 0x4200dde9: [0;33mapp_main[0m[0m at [0;32m/home/hyl/work/rtsp/my_rtsp_project/main/main.c[0m[0m:[1;31m112[0m
+[0m--- 0x420ba292: [0;33mmain_task[0m[0m at [0;32m/home/hyl/esp/esp-idf/components/freertos/app_startup.c[0m[0m:[1;31m208[0m
+[0m--- 0x4037fd9e: [0;33mvPortTaskWrapper[0m[0m at [0;32m/home/hyl/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x40375aa9: [0;33mesp_restart_noos[0m[0m at [0;32m/home/hyl/esp/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c[0m[0m:[1;31m162[0m
+[0m--- 0x40056f0d: [0;33m__memcpy_aux[0m[0m in [0;32mROM[0m
+[0m--- 0x40056f08: [0;33m__memcpy_aux[0m[0m in [0;32mROM[0m
+[0m--- 0x40056f12: [0;33m__memcpy_aux[0m[0m in [0;32mROM[0m
+[0m--- 0x40056f0a: [0;33m__memcpy_aux[0m[0m in [0;32mROM[0m
+[0m--- 0x403800fb: [0;33mprvCopyDataToQueue[0m[0m at [0;32m/home/hyl/esp/esp-idf/components/freertos/FreeRTOS-Kernel/queue.c[0m[0m:[1;31m2481[0m
+[0m--- 0x403802c6: [0;33mxQueueGenericSendFromISR[0m[0m at [0;32m/home/hyl/esp/esp-idf/components/freertos/FreeRTOS-Kernel/queue.c[0m[0m:[1;31m1224[0m
+[0m--- 0x40378c35: [0;33mi2s_dma_rx_callback[0m[0m at [0;32m/home/hyl/esp/esp-idf/components/esp_driver_i2s/i2s_common.c[0m[0m:[1;31m609[0m
+[0m--- 0x4037d3b5: [0;33mgdma_default_rx_isr[0m[0m at [0;32m/home/hyl/esp/esp-idf/components/esp_hw_support/dma/gdma.c[0m[0m:[1;31m819[0m
+[0m--- 0x4037785d: [0;33m_xt_lowint1[0m[0m at [0;32m/home/hyl/esp/esp-idf/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x400559dd: [0;33m_xtos_set_intlevel[0m[0m in [0;32mROM[0m
+[0m--- 0x4037ffce: [0;33mvPortClearInterruptMaskFromISR[0m[0m at [0;32m/home/hyl/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos/portmacro.h[0m[0m:[1;31m560[0m
+[0m--- (inlined by) [0;33mvPortExitCritical[0m[0m at [0;32m/home/hyl/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m514[0m
+[0m--- 0x4038255a: [0;33mvPortExitCriticalSafe[0m[0m at [0;32m/home/hyl/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos/portmacro.h[0m[0m:[1;31m596[0m
+[0m--- (inlined by) [0;33mmulti_heap_internal_unlock[0m[0m at [0;32m/home/hyl/esp/esp-idf/components/heap/multi_heap.c[0m[0m:[1;31m169[0m
+[0m--- 0x420bd79f: [0;33mmulti_heap_get_info_impl[0m[0m at [0;32m/home/hyl/esp/esp-idf/components/heap/multi_heap.c[0m[0m:[1;31m428[0m
+[0m--- 0x42005617: [0;33mheap_caps_get_info[0m[0m at [0;32m/home/hyl/esp/esp-idf/components/heap/heap_caps.c[0m[0m:[1;31m375[0m
+[0m--- 0x42005665: [0;33mheap_caps_get_largest_free_block[0m[0m at [0;32m/home/hyl/esp/esp-idf/components/heap/heap_caps.c[0m[0m:[1;31m304[0m
+[0m--- 0x403786f2: [0;33mget_buffer_malloc[0m[0m at [0;32m/home/hyl/esp/esp-idf/components/spi_flash/spi_flash_os_func_app.c[0m[0m:[1;31m219[0m
+[0m--- 0x4004b731: [0;33mesp_flash_read[0m[0m in [0;32mROM[0m
+[0m--- 0x42089c43: [0;33mesp_partition_read[0m[0m at [0;32m/home/hyl/esp/esp-idf/components/esp_partition/partition_target.c[0m[0m:[1;31m38[0m
+[0m--- 0x4202821b: [0;33mnvs::NVSPartition::read(unsigned int, void*, unsigned int)[0m[0m at [0;32m/home/hyl/esp/esp-idf/components/nvs_flash/src/nvs_partition.cpp[0m[0m:[1;31m37[0m
+[0m--- 0x420af0ae: [0;33mnvs::Page::readEntry(unsigned int, nvs::Item&) const[0m[0m at [0;32m/home/hyl/esp/esp-idf/components/nvs_flash/src/nvs_page.cpp[0m[0m:[1;31m858[0m
+[0m--- 0x42028fe3: [0;33mnvs::Page::findItem(unsigned char, nvs::ItemType, char const*, unsigned int&, nvs::Item&, unsigned char, nvs::VerOffset)[0m[0m at [0;32m/home/hyl/esp/esp-idf/components/nvs_flash/src/nvs_page.cpp[0m[0m:[1;31m911[0m
+[0m--- 0x4202736a: [0;33mnvs::Storage::eraseMultiPageBlob(unsigned char, char const*, nvs::VerOffset)[0m[0m at [0;32m/home/hyl/esp/esp-idf/components/nvs_flash/src/nvs_storage.cpp[0m[0m:[1;31m745[0m
+[0m--- 0x42027d71: [0;33mnvs::Storage::writeItem(unsigned char, nvs::ItemType, char const*, void const*, unsigned int)[0m[0m at [0;32m/home/hyl/esp/esp-idf/components/nvs_flash/src/nvs_storage.cpp[0m[0m:[1;31m448[0m
+[0m--- 0x4202801d: [0;33mnvs::NVSHandleSimple::set_blob(char const*, void const*, unsigned int)[0m[0m at [0;32m/home/hyl/esp/esp-idf/components/nvs_flash/src/nvs_handle_simple.cpp[0m[0m:[1;31m44[0m
+[0m--- 0x42026b8b: [0;33mnvs_set_blob[0m[0m at [0;32m/home/hyl/esp/esp-idf/components/nvs_flash/src/nvs_api.cpp[0m[0m:[1;31m442[0m
+[0m--- 0x4206fc39: [0;33mwifi_nvs_set[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x42071adf: [0;33mwifi_station_save_ap_channel[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x42078a0d: [0;33mcnx_auth_done[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x42070962: [0;33mesp_wifi_auth_done_internal[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x4208cb93: [0;33mwpa_neg_complete[0m[0m at [0;32m/home/hyl/esp/esp-idf/components/wpa_supplicant/esp_supplicant/src/esp_wpa_main.c[0m[0m:[1;31m132[0m
+[0m--- 0x42096a51: [0;33mwpa_supplicant_key_neg_complete[0m[0m at [0;32m/home/hyl/esp/esp-idf/components/wpa_supplicant/src/rsn_supp/wpa.c[0m[0m:[1;31m828[0m
+[0m--- 0x4209771d: [0;33mwpa_supplicant_send_4_of_4_txcallback[0m[0m at [0;32m/home/hyl/esp/esp-idf/components/wpa_supplicant/src/rsn_supp/wpa.c[0m[0m:[1;31m1404[0m
+[0m--- 0x42097893: [0;33meapol_txcb[0m[0m at [0;32m/home/hyl/esp/esp-idf/components/wpa_supplicant/src/rsn_supp/wpa.c[0m[0m:[1;31m2652[0m
+[0m--- 0x42078e21: [0;33msta_eapol_txdone_cb[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x4003f58a: [0;33mppProcTxCallback[0m[0m in [0;32mROM[0m
+[0m--- 0x4003b1ff: [0;33mlmacTxDone[0m[0m in [0;32mROM[0m
+[0m--- 0x4003b0d5: [0;33mlmacRecycleMPDU[0m[0m in [0;32mROM[0m
+[0m--- 0x420b36f1: [0;33mlmacEndFrameExchangeSequence[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x420b4b27: [0;33mlmacProcessTxSuccess[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x420b4bfd: [0;33mlmacProcessTxComplete[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x420b319d: [0;33mppTask[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x4037fd9e: [0;33mvPortTaskWrapper[0m[0m at [0;32m/home/hyl/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x40375aa9: [0;33mesp_restart_noos[0m[0m at [0;32m/home/hyl/esp/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c[0m[0m:[1;31m162[0m
+[0m--- 0x4200aa98: [0;33muart_write[0m[0m at [0;32m/home/hyl/esp/esp-idf/components/esp_driver_uart/src/uart_vfs.c[0m[0m:[1;31m236[0m
+[0m--- 0x400556d5: [0;33mstrlen[0m[0m in [0;32mROM[0m
+[0m--- 0x400556e5: [0;33mstrlen[0m[0m in [0;32mROM[0m
+[0m--- 0x4200aa95: [0;33muart_write[0m[0m at [0;32m/home/hyl/esp/esp-idf/components/esp_driver_uart/src/uart_vfs.c[0m[0m:[1;31m235[0m
+[0m--- 0x4200c786: [0;33mesp_vfs_write[0m[0m at [0;32m/home/hyl/esp/esp-idf/components/vfs/vfs.c[0m[0m:[1;31m945[0m
+[0m--- 0x420a20fe: [0;33mwrite[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/syscalls/syswrite.c[0m[0m:[1;31m11[0m
+[0m--- 0x4200bc91: [0;33mconsole_write[0m[0m at [0;32m/home/hyl/esp/esp-idf/components/esp_vfs_console/vfs_console.c[0m[0m:[1;31m83[0m
+[0m--- 0x4200c792: [0;33mesp_vfs_write[0m[0m at [0;32m/home/hyl/esp/esp-idf/components/vfs/vfs.c[0m[0m:[1;31m945[0m
+[0m--- 0x420a17f2: [0;33m__swrite[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/stdio.c[0m[0m:[1;31m94[0m
+[0m--- 0x420a0d85: [0;33m__sflush_r[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/fflush.c[0m[0m:[1;31m224[0m
+[0m--- 0x420a0dd6: [0;33m_fflush_r[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/fflush.c[0m[0m:[1;31m278[0m
+[0m--- 0x420a13d5: [0;33m__sfvwrite_r[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/fvwrite.c[0m[0m:[1;31m251[0m
+[0m--- 0x420a87e3: [0;33m__sprint_r[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c[0m[0m:[1;31m429[0m
+[0m--- (inlined by) [0;33m__sprint_r[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c[0m[0m:[1;31m399[0m
+[0m--- 0x420a81ea: [0;33m_vfprintf_r[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c[0m[0m:[1;31m1774[0m
+[0m--- 0x420a1869: [0;33mvprintf[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vprintf.c[0m[0m:[1;31m34[0m
+[0m--- 0x40383aee: [0;33mesp_log_writev[0m[0m at [0;32m/home/hyl/esp/esp-idf/components/log/src/os/log_write.c[0m[0m:[1;31m34[0m
+[0m--- 0x40383ab9: [0;33mesp_log_write[0m[0m at [0;32m/home/hyl/esp/esp-idf/components/log/src/os/log_write.c[0m[0m:[1;31m44[0m
+[0m--- 0x4200dda2: [0;33mapp_main[0m[0m at [0;32m/home/hyl/work/rtsp/my_rtsp_project/main/main.c[0m[0m:[1;31m94[0m
+[0m--- 0x420ba292: [0;33mmain_task[0m[0m at [0;32m/home/hyl/esp/esp-idf/components/freertos/app_startup.c[0m[0m:[1;31m208[0m
+[0m--- 0x4037fd9e: [0;33mvPortTaskWrapper[0m[0m at [0;32m/home/hyl/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x40375aa9: [0;33mesp_restart_noos[0m[0m at [0;32m/home/hyl/esp/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c[0m[0m:[1;31m162[0m
+[0m--- 0x4200aa98: [0;33muart_write[0m[0m at [0;32m/home/hyl/esp/esp-idf/components/esp_driver_uart/src/uart_vfs.c[0m[0m:[1;31m236[0m
+[0m--- 0x400556d5: [0;33mstrlen[0m[0m in [0;32mROM[0m
+[0m--- 0x400556e5: [0;33mstrlen[0m[0m in [0;32mROM[0m
+[0m--- 0x4200aa95: [0;33muart_write[0m[0m at [0;32m/home/hyl/esp/esp-idf/components/esp_driver_uart/src/uart_vfs.c[0m[0m:[1;31m235[0m
+[0m--- 0x4200c786: [0;33mesp_vfs_write[0m[0m at [0;32m/home/hyl/esp/esp-idf/components/vfs/vfs.c[0m[0m:[1;31m945[0m
+[0m--- 0x420a20fe: [0;33mwrite[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/syscalls/syswrite.c[0m[0m:[1;31m11[0m
+[0m--- 0x4200bc91: [0;33mconsole_write[0m[0m at [0;32m/home/hyl/esp/esp-idf/components/esp_vfs_console/vfs_console.c[0m[0m:[1;31m83[0m
+[0m--- 0x4200c792: [0;33mesp_vfs_write[0m[0m at [0;32m/home/hyl/esp/esp-idf/components/vfs/vfs.c[0m[0m:[1;31m945[0m
+[0m--- 0x420a17f2: [0;33m__swrite[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/stdio.c[0m[0m:[1;31m94[0m
+[0m--- 0x420a0d85: [0;33m__sflush_r[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/fflush.c[0m[0m:[1;31m224[0m
+[0m--- 0x420a0dd6: [0;33m_fflush_r[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/fflush.c[0m[0m:[1;31m278[0m
+[0m--- 0x420a13d5: [0;33m__sfvwrite_r[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/fvwrite.c[0m[0m:[1;31m251[0m
+[0m--- 0x420a87e3: [0;33m__sprint_r[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c[0m[0m:[1;31m429[0m
+[0m--- (inlined by) [0;33m__sprint_r[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c[0m[0m:[1;31m399[0m
+[0m--- 0x420a81ad: [0;33m_vfprintf_r[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c[0m[0m:[1;31m1766[0m
+[0m--- 0x420a1869: [0;33mvprintf[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vprintf.c[0m[0m:[1;31m34[0m
+[0m--- 0x40383aee: [0;33mesp_log_writev[0m[0m at [0;32m/home/hyl/esp/esp-idf/components/log/src/os/log_write.c[0m[0m:[1;31m34[0m
+[0m--- 0x40383ab9: [0;33mesp_log_write[0m[0m at [0;32m/home/hyl/esp/esp-idf/components/log/src/os/log_write.c[0m[0m:[1;31m44[0m
+[0m--- 0x4206b65f: [0;33mwifi_log[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x4206e2f6: [0;33mieee80211_update_channel[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x42077fe7: [0;33mcnx_sta_leave[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x42079c75: [0;33mieee80211_sta_new_state[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x4207714f: [0;33mcnx_auth_timeout_process[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x42073f44: [0;33mieee80211_ap_sa_query_timeout[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x42074237: [0;33mieee80211_timer_do_process[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x420b3145: [0;33mppTask[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x4037fd9e: [0;33mvPortTaskWrapper[0m[0m at [0;32m/home/hyl/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x40375aa9: [0;33mesp_restart_noos[0m[0m at [0;32m/home/hyl/esp/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c[0m[0m:[1;31m162[0m
+[0m--- 0x40056f0d: [0;33m__memcpy_aux[0m[0m in [0;32mROM[0m
+[0m--- 0x40056f08: [0;33m__memcpy_aux[0m[0m in [0;32mROM[0m
+[0m--- 0x40056f12: [0;33m__memcpy_aux[0m[0m in [0;32mROM[0m
+[0m--- 0x40056f0a: [0;33m__memcpy_aux[0m[0m in [0;32mROM[0m
+[0m--- 0x403800fb: [0;33mprvCopyDataToQueue[0m[0m at [0;32m/home/hyl/esp/esp-idf/components/freertos/FreeRTOS-Kernel/queue.c[0m[0m:[1;31m2481[0m
+[0m--- 0x403802c6: [0;33mxQueueGenericSendFromISR[0m[0m at [0;32m/home/hyl/esp/esp-idf/components/freertos/FreeRTOS-Kernel/queue.c[0m[0m:[1;31m1224[0m
+[0m--- 0x40378c35: [0;33mi2s_dma_rx_callback[0m[0m at [0;32m/home/hyl/esp/esp-idf/components/esp_driver_i2s/i2s_common.c[0m[0m:[1;31m609[0m
+[0m--- 0x4037d3b5: [0;33mgdma_default_rx_isr[0m[0m at [0;32m/home/hyl/esp/esp-idf/components/esp_hw_support/dma/gdma.c[0m[0m:[1;31m819[0m
+[0m--- 0x4037785d: [0;33m_xt_lowint1[0m[0m at [0;32m/home/hyl/esp/esp-idf/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x4037d21f: [0;33mxt_utils_wait_for_intr[0m[0m at [0;32m/home/hyl/esp/esp-idf/components/xtensa/include/xt_utils.h[0m[0m:[1;31m82[0m
+[0m--- (inlined by) [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32m/home/hyl/esp/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m55[0m
+[0m--- 0x42005002: [0;33mesp_vApplicationIdleHook[0m[0m at [0;32m/home/hyl/esp/esp-idf/components/esp_system/freertos_hooks.c[0m[0m:[1;31m58[0m
+[0m--- 0x420bb7bd: [0;33mprvIdleTask[0m[0m at [0;32m/home/hyl/esp/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c[0m[0m:[1;31m4341[0m
+[0m--- 0x4037fd9e: [0;33mvPortTaskWrapper[0m[0m at [0;32m/home/hyl/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x40375aa9: [0;33mesp_restart_noos[0m[0m at [0;32m/home/hyl/esp/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c[0m[0m:[1;31m162[0m
+[0m

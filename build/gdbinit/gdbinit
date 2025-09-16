@@ -1,0 +1,2 @@
+source /home/hyl/work/rtsp/my_rtsp_project/build/gdbinit/symbols
+source /home/hyl/work/rtsp/my_rtsp_project/build/gdbinit/connect

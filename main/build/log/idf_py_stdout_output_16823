@@ -1,0 +1,4 @@
+-- IDF_TARGET not set, using default target: esp32
+-- Found Git: /usr/bin/git (found version "2.34.1") 
+-- Configuring incomplete, errors occurred!
+See also "/home/hyl/work/rtsp/esp-adf/examples/protocols/esp-rtsp/main/build/CMakeFiles/CMakeOutput.log".

@@ -1,0 +1,512 @@
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x15 (USB_UART_CHIP_RESET),boot:0x8 (SPI_FAST_FLASH_BOOT)
+Saved PC:0x40048ee5
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2820,len:0x16d0
+load:0x403c8700,len:0x4
+load:0x403c8704,len:0xec8
+load:0x403cb700,len:0x3160
+entry 0x403c8950
+[0;32mI (26) boot: ESP-IDF v5.4.2-dirty 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Sep 12 2025 19:17:30[0m
+[0;32mI (27) boot: Multicore bootloader[0m
+[0;32mI (27) boot: chip revision: v0.2[0m
+[0;32mI (30) boot: efuse block revision: v1.3[0m
+[0;32mI (34) qio_mode: Enabling default flash chip QIO[0m
+[0;32mI (38) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (42) boot.esp32s3: SPI Mode       : QIO[0m
+[0;32mI (46) boot.esp32s3: SPI Flash Size : 8MB[0m
+[0;32mI (49) boot: Enabling RNG early entropy source...[0m
+[0;32mI (54) boot: Partition Table:[0m
+[0;32mI (57) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (63) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (69) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (76) boot:  2 factory          factory app      00 00 00010000 00400000[0m
+[0;32mI (82) boot: End of partition table[0m
+[0;32mI (86) esp_image: segment 0: paddr=00010020 vaddr=3c0c0020 size=256cch (153292) map[0m
+[0;32mI (116) esp_image: segment 1: paddr=000356f4 vaddr=3fc95200 size=0746ch ( 29804) load[0m
+[0;32mI (122) esp_image: segment 2: paddr=0003cb68 vaddr=40374000 size=034b0h ( 13488) load[0m
+[0;32mI (125) esp_image: segment 3: paddr=00040020 vaddr=42000020 size=bdd34h (777524) map[0m
+[0;32mI (243) esp_image: segment 4: paddr=000fdd5c vaddr=403774b0 size=0dd30h ( 56624) load[0m
+[0;32mI (254) esp_image: segment 5: paddr=0010ba94 vaddr=600fe000 size=0001ch (    28) load[0m
+[0;32mI (262) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (262) boot: Disabling RNG early entropy source...[0m
+[0;32mI (272) octal_psram: vendor id    : 0x0d (AP)[0m
+[0;32mI (272) octal_psram: dev id       : 0x02 (generation 3)[0m
+[0;32mI (272) octal_psram: density      : 0x03 (64 Mbit)[0m
+[0;32mI (274) octal_psram: good-die     : 0x01 (Pass)[0m
+[0;32mI (278) octal_psram: Latency      : 0x01 (Fixed)[0m
+[0;32mI (283) octal_psram: VCC          : 0x01 (3V)[0m
+[0;32mI (287) octal_psram: SRF          : 0x01 (Fast Refresh)[0m
+[0;32mI (292) octal_psram: BurstType    : 0x01 (Hybrid Wrap)[0m
+[0;32mI (297) octal_psram: BurstLen     : 0x01 (32 Byte)[0m
+[0;32mI (301) octal_psram: Readlatency  : 0x02 (10 cycles@Fixed)[0m
+[0;32mI (306) octal_psram: DriveStrength: 0x00 (1/1)[0m
+[0;32mI (311) esp_psram: Found 8MB PSRAM device[0m
+[0;32mI (314) esp_psram: Speed: 40MHz[0m
+[0;32mI (317) cpu_start: Multicore app[0m
+[0;32mI (1051) esp_psram: SPI SRAM memory test OK[0m
+[0;32mI (1060) cpu_start: Pro cpu start user code[0m
+[0;32mI (1060) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (1060) app_init: Application information:[0m
+[0;32mI (1060) app_init: Project name:     my_rtsp_project[0m
+[0;32mI (1065) app_init: App version:      1.0.0[0m
+[0;32mI (1069) app_init: Compile time:     Sep 12 2025 19:17:25[0m
+[0;32mI (1074) app_init: ELF file SHA256:  3d46b6717...[0m
+[0;32mI (1078) app_init: ESP-IDF:          v5.4.2[0m
+[0;32mI (1082) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (1086) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (1090) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (1094) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (1100) heap_init: At 3FCA15B0 len 00048160 (288 KiB): RAM[0m
+[0;32mI (1106) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (1111) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (1116) heap_init: At 600FE01C len 00001FCC (7 KiB): RTCRAM[0m
+[0;32mI (1122) esp_psram: Adding pool of 8192K of PSRAM memory to heap allocator[0m
+[0;32mI (1129) spi_flash: detected chip: gd[0m
+[0;32mI (1131) spi_flash: flash io: qio[0m
+[0;32mI (1135) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (1141) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (1148) main_task: Started on CPU0[0m
+[0;32mI (1151) esp_psram: Reserving pool of 32K of internal memory for DMA/internal allocations[0m
+[0;32mI (1159) main_task: Calling app_main()[0m
+[0;32mI (1162) ESP_RTSP: Func:app_main, Line:83, MEM Total:8687408 Bytes, Inter:333291 Bytes, Dram:333291 Bytes, Dram largest free:237568Bytes[0m
+
+[0;32mI (1203) ESP_RTSP: [ 1 ] Initialize WiFi[0m
+[0;32mI (1204) pp: pp rom version: e7ae62f[0m
+[0;32mI (1205) net80211: net80211 rom version: e7ae62f[0m
+[0;32mI (1207) wifi:wifi driver task: 3fcb43dc, prio:23, stack:6656, core=0[0m
+[0;32mI (1228) wifi:wifi firmware version: bea31f3[0m
+[0;32mI (1228) wifi:wifi certification version: v7.0[0m
+[0;32mI (1228) wifi:config NVS flash: enabled[0m
+[0;32mI (1229) wifi:config nano formatting: disabled[0m
+[0;32mI (1233) wifi:Init data frame dynamic rx buffer num: 128[0m
+[0;32mI (1238) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (1242) wifi:Init management short buffer num: 32[0m
+[0;32mI (1247) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (1251) wifi:Init static tx FG buffer num: 2[0m
+[0;32mI (1255) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (1259) wifi:Init static rx buffer num: 9[0m
+[0;32mI (1263) wifi:Init dynamic rx buffer num: 128[0m
+[0;32mI (1267) wifi_init: rx ba win: 6[0m
+[0;32mI (1270) wifi_init: accept mbox: 6[0m
+[0;32mI (1273) wifi_init: tcpip mbox: 64[0m
+[0;32mI (1276) wifi_init: udp mbox: 64[0m
+[0;32mI (1279) wifi_init: tcp mbox: 64[0m
+[0;32mI (1282) wifi_init: tcp tx win: 65535[0m
+[0;32mI (1285) wifi_init: tcp rx win: 65535[0m
+[0;32mI (1289) wifi_init: tcp mss: 1440[0m
+[0;32mI (1293) phy_init: phy_version 701,f4f1da3a,Mar  3 2025,15:50:10[0m
+[0;32mI (1343) wifi:mode : sta (d8:3b:da:46:fd:78)[0m
+[0;32mI (1343) wifi:enable tsf[0m
+[0;32mI (1345) ESP_RTSP: WiFi initialization completed[0m
+[0;32mI (1346) ESP_RTSP: [ 2 ] Initialize av stream[0m
+[0;32mI (1347) CUSTOM_AUDIO_HAL: Initializing custom audio HAL for XIAO ESP32-S3-Sense[0m
+[0;32mI (1355) wifi:new:<1,0>, old:<1,0>, ap:<255,255>, sta:<1,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (1361) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (1366) CUSTOM_AUDIO_HAL: Initializing I2S/PDM microphone: 16000Hz, 16bit, 1ch[0m
+[0;32mI (1373) CUSTOM_AUDIO_HAL: I2S/PDM microphone initialized successfully[0m
+[0;32mI (1375) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (1383) CUSTOM_AUDIO_HAL: PDM pins: CLK=42, DIN=41[0m
+[0;32mI (1386) CUSTOM_AUDIO_HAL: Starting I2S/PDM microphone recording[0m
+[0;32mI (1392) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (1397) CUSTOM_AUDIO_HAL: Custom audio HAL initialized successfully[0m
+[0;32mI (1402) CUSTOM_CAMERA_HAL: Initializing custom camera for XIAO ESP32-S3-Sense[0m
+[0;32mI (1409) s3 ll_cam: DMA Channel=2[0m
+[0;32mI (1413) cam_hal: cam init ok[0m
+[0;32mI (1414) sccb-ng: pin_sda 40 pin_scl 39[0m
+[0;32mI (1418) sccb-ng: sccb_i2c_port=0[0m
+[0;32mI (1421) wifi:connected with Skyris2, aid = 8, channel 1, BW20, bssid = e2:e9:a5:2a:d9:ca[0m
+[0;32mI (1429) wifi:security: WPA2-PSK, phy: bgn, rssi: -44[0m
+[0;32mI (1439) wifi:pm start, type: 1[0m
+
+[0;32mI (1439) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (1445) wifi:set rx beacon pti, rx_bcn_pti: 0, bcn_timeout: 25000, mt_pti: 0, mt_time: 10000[0m
+[0;32mI (1453) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (1469) wifi:<ba-add>idx:0 (ifx:0, e2:e9:a5:2a:d9:ca), tid:0, ssn:0, winSize:64[0m
+[0;32mI (1472) ov3660: Mismatch PID=0x5640[0m
+[0;32mI (1474) camera: Camera PID=0x5640 VER=0x00 MIDL=0x00 MIDH=0x00[0m
+[0;32mI (1475) camera: Detected OV5640 camera[0m
+[0;32mI (1478) camera: Detected camera at address=0x3c[0m
+[0;32mI (1555) wifi:<ba-add>idx:1 (ifx:0, e2:e9:a5:2a:d9:ca), tid:6, ssn:2, winSize:64[0m
+[0;32mI (2173) cam_hal: PSRAM DMA mode disabled[0m
+[0;32mI (2173) cam_hal: buffer_size: 16384, half_buffer_size: 1024, node_buffer_size: 1024, node_cnt: 16, total_cnt: 30[0m
+[0;32mI (2176) cam_hal: Allocating 30720 Byte frame buffer in PSRAM[0m
+[0;32mI (2181) cam_hal: Allocating 30720 Byte frame buffer in PSRAM[0m
+[0;32mI (2187) cam_hal: cam config ok[0m
+[0;32mI (2202) ov5640: Set PLL: bypass: 0, multiplier: 180, sys_div: 4, pre_div: 2, root_2x: 0, pclk_root_div: 2, pclk_manual: 1, pclk_div: 4[0m
+[0;32mI (2204) ov5640: Calculated XVCLK: 20000000 Hz, REFIN: 10000000 Hz, VCO: 1800000000 Hz, PLL_CLK: 180000000 Hz, SYSCLK: 45000000 Hz, PCLK: 11250000 Hz[0m
+[0;32mI (2237) CUSTOM_CAMERA_HAL: Setting camera flip settings...[0m
+[0;32mI (2240) CUSTOM_CAMERA_HAL: Custom camera initialized successfully[0m
+[0;32mI (2240) ESP_RTSP_SERVER: esp_rtsp ver: 1.1.0 compile date: Sep 27 2024-03:07:26[0m
+[0;32mI (2247) ESP_RTSP_SERVER: RTSP server task started URL: rtsp://0.0.0.0:8554[0m
+[0;32mI (2253) main_task: Returned from app_main()[0m
+[0;32mI (2510) ESP_RTSP: WiFi connected! IP: 192.168.1.182[0m
+[0;32mI (2510) ESP_RTSP: RTSP URL: rtsp://192.168.1.182:8554/live[0m
+[0;32mI (2510) esp_netif_handlers: sta ip: 192.168.1.182, mask: 255.255.255.0, gw: 192.168.1.254[0m
+[0;32mI (128452) ESP_RTSP_SERVER: RTSP Client ip address: 192.168.1.175[0m
+[0;32mI (128452) ESP_RTSP_SERVER: RX:
+
+OPTIONS rtsp://192.168.1.182:8554/stream RTSP/1.0
+CSeq: 1
+User-Agent: Lavf58.76.100
+
+[0m
+[0;32mI (128460) ESP_RTSP_SERVER: RTSP received [OPTIONS], len 89[0m
+[0;32mI (128466) ESP_RTSP_SERVER: TX:
+
+RTSP/1.0 200 OK
+CSeq: 1
+Public: OPTIONS, DESCRIBE, SETUP, PLAY, TEARDOWN
+Server: ESP32-RTSP-Server 1.1.0
+
+[0m
+[0;32mI (128488) ESP_RTSP_SERVER: RX:
+
+DESCRIBE rtsp://192.168.1.182:8554/stream RTSP/1.0
+Accept: application/sdp
+CSeq: 2
+User-Agent: Lavf58.76.100
+
+[0m
+[0;32mI (128495) ESP_RTSP_SERVER: RTSP received [DESCRIBE], len 115[0m
+[0;32mI (128502) ESP_RTSP_SERVER: TX:
+
+RTSP/1.0 200 OK
+CSeq: 2
+Content-Type: application/sdp
+Content-Length: 205 
+
+v=0
+o=Z 0 3 IN IP4 0.0.0.0
+s=Z
+t=0 0
+c=IN IP4 0.0.0.0
+m=audio 0 RTP/AVP 8 101
+a=rtpmap:8 PCMA/8000
+a=rtpmap:101 telephone-event/8000
+a=control:trackID=0
+m=video 0 RTP/AVP 26
+a=control:trackID=1
+[0m
+[0;32mI (128541) ESP_RTSP_SERVER: RX:
+
+SETUP rtsp://192.168.1.182:8554/stream/trackID=0 RTSP/1.0
+Transport: RTP/AVP/TCP;unicast;interleaved=0-1
+CSeq: 3
+User-Agent: Lavf58.76.100
+
+[0m
+[0;32mI (128550) ESP_RTSP_SERVER: RTSP received [SETUP], len 145[0m
+[0;32mI (128556) RTSP_SERVICE: RTSP_STATE_SETUP[0m
+[0;32mI (128560) ESP_RTSP_SERVER: TX:
+
+RTSP/1.0 200 OK
+Transport: RTP/AVP/TCP;unicast;interleaved=0-1
+CSeq: 3
+Session: 3314189
+
+[0m
+[0;32mI (128579) ESP_RTSP_SERVER: RX:
+
+SETUP rtsp://192.168.1.182:8554/stream/trackID=1 RTSP/1.0
+Transport: RTP/AVP/TCP;unicast;interleaved=2-3
+CSeq: 4
+User-Agent: Lavf58.76.100
+Session: 3314189
+
+[0m
+[0;32mI (128591) ESP_RTSP_SERVER: RTSP received [SETUP], len 163[0m
+[0;32mI (128598) RTSP_SERVICE: RTSP_STATE_SETUP[0m
+[0;32mI (128601) ESP_RTSP_SERVER: TX:
+
+RTSP/1.0 200 OK
+Transport: RTP/AVP/TCP;unicast;interleaved=2-3
+CSeq: 4
+Session: 3314189
+
+[0m
+[0;32mI (128621) ESP_RTSP_SERVER: RX:
+
+PLAY rtsp://192.168.1.182:8554/stream RTSP/1.0
+Range: npt=0.000-
+CSeq: 5
+User-Agent: Lavf58.76.100
+Session: 3314189
+
+[0m
+[0;32mI (128630) ESP_RTSP_SERVER: RTSP received [PLAY], len 123[0m
+[0;33mW (128636) AV_STREAM: Resampling disabled, using raw audio data[0m
+[0;32mI (128642) AUDIO_PIPELINE: Func:audio_pipeline_run, Line:359, MEM Total:8539392 Bytes, Inter:257895 Bytes, Dram:257895 Bytes, Dram largest free:159744Bytes[0m
+
+[0;32mI (128655) AUDIO_PIPELINE: Pipeline started[0m
+[0;32mI (128659) AUDIO_THREAD: The _audio_enc task allocate stack on external memory[0m
+[0;32mI (128668) AV_STREAM: audio_enc started[0m
+[0;32mI (128670) AUDIO_THREAD: The _video_enc task allocate stack on external memory[0m
+[0;32mI (128678) RTSP_SERVICE: RTSP_STATE_PLAY[0m
+[0;32mI (128692) ESP_RTSP_SERVER: TX:
+
+RTSP/1.0 200 OK
+CSeq: 5
+Session: 3314189
+
+[0m
+[0;32mI (148733) ESP_RTSP_SERVER: RX:
+
+TEARDOWN rtsp://192.168.1.182:8554/stream RTSP/1.0
+CSeq: 6
+User-Agent: Lavf58.76.100
+Session: 3314189
+
+[0m
+[0;32mI (148736) ESP_RTSP_SERVER: RTSP received [TEARDOWN], len 108[0m
+[0;32mI (148745) ESP_RTSP_SERVER: TX:
+
+RTSP/1.0 200 OK
+CSeq: 6
+
+[0m
+[0;32mI (148762) AV_STREAM: _audio_enc task stoped[0m
+[0;32mI (148877) AV_STREAM: _video_enc task stoped[0m
+[0;32mI (148878) RTSP_SERVICE: RTSP_STATE_TEARDOWN[0m
+[0;32mI (148878) ESP_RTSP_SERVER: Remote RTSP client exit[0m
+[0;32mI (316249) ESP_RTSP_SERVER: RTSP Client ip address: 192.168.1.113[0m
+[0;32mI (316250) ESP_RTSP_SERVER: RX:
+
+OPTIONS rtsp://192.168.1.182:8554/stream RTSP/1.0
+CSeq: 1
+User-Agent: Lavf58.76.100
+
+[0m
+[0;32mI (316257) ESP_RTSP_SERVER: RTSP received [OPTIONS], len 89[0m
+[0;32mI (316264) ESP_RTSP_SERVER: TX:
+
+RTSP/1.0 200 OK
+CSeq: 1
+Public: OPTIONS, DESCRIBE, SETUP, PLAY, TEARDOWN
+Server: ESP32-RTSP-Server 1.1.0
+
+[0m
+[0;32mI (316296) ESP_RTSP_SERVER: RX:
+
+DESCRIBE rtsp://192.168.1.182:8554/stream RTSP/1.0
+Accept: application/sdp
+CSeq: 2
+User-Agent: Lavf58.76.100
+
+[0m
+[0;32mI (316300) ESP_RTSP_SERVER: RTSP received [DESCRIBE], len 115[0m
+[0;32mI (316307) ESP_RTSP_SERVER: TX:
+
+RTSP/1.0 200 OK
+CSeq: 2
+Content-Type: application/sdp
+Content-Length: 205 
+
+v=0
+o=Z 0 3 IN IP4 0.0.0.0
+s=Z
+t=0 0
+c=IN IP4 0.0.0.0
+m=audio 0 RTP/AVP 8 101
+a=rtpmap:8 PCMA/8000
+a=rtpmap:101 telephone-event/8000
+a=control:trackID=0
+m=video 0 RTP/AVP 26
+a=control:trackID=1
+[0m
+[0;32mI (316363) ESP_RTSP_SERVER: RX:
+
+SETUP rtsp://192.168.1.182:8554/stream/trackID=0 RTSP/1.0
+Transport: RTP/AVP/TCP;unicast;interleaved=0-1
+CSeq: 3
+User-Agent: Lavf58.76.100
+
+[0m
+[0;32mI (316370) ESP_RTSP_SERVER: RTSP received [SETUP], len 145[0m
+[0;32mI (316376) RTSP_SERVICE: RTSP_STATE_SETUP[0m
+[0;32mI (316380) ESP_RTSP_SERVER: TX:
+
+RTSP/1.0 200 OK
+Transport: RTP/AVP/TCP;unicast;interleaved=0-1
+CSeq: 3
+Session: 3512037
+
+[0m
+[0;32mI (316400) ESP_RTSP_SERVER: RX:
+
+SETUP rtsp://192.168.1.182:8554/stream/trackID=1 RTSP/1.0
+Transport: RTP/AVP/TCP;unicast;interleaved=2-3
+CSeq: 4
+User-Agent: Lavf58.76.100
+Session: 3512037
+
+[0m
+[0;32mI (316412) ESP_RTSP_SERVER: RTSP received [SETUP], len 163[0m
+[0;32mI (316418) RTSP_SERVICE: RTSP_STATE_SETUP[0m
+[0;32mI (316422) ESP_RTSP_SERVER: TX:
+
+RTSP/1.0 200 OK
+Transport: RTP/AVP/TCP;unicast;interleaved=2-3
+CSeq: 4
+Session: 3512037
+
+[0m
+[0;32mI (316465) ESP_RTSP_SERVER: RX:
+
+PLAY rtsp://192.168.1.182:8554/stream RTSP/1.0
+Range: npt=0.000-
+CSeq: 5
+User-Agent: Lavf58.76.100
+Session: 3512037
+
+[0m
+[0;32mI (316469) ESP_RTSP_SERVER: RTSP received [PLAY], len 123[0m
+[0;33mW (316476) AV_STREAM: Resampling disabled, using raw audio data[0m
+[0;32mI (316481) AUDIO_PIPELINE: Func:audio_pipeline_run, Line:359, MEM Total:8519780 Bytes, Inter:257747 Bytes, Dram:257747 Bytes, Dram largest free:159744Bytes[0m
+
+[0;32mI (316495) AUDIO_PIPELINE: Pipeline started[0m
+[0;32mI (316499) AUDIO_THREAD: The _audio_enc task allocate stack on external memory[0m
+[0;32mI (316507) AV_STREAM: audio_enc started[0m
+[0;32mI (316510) AUDIO_THREAD: The _video_enc task allocate stack on external memory[0m
+[0;32mI (316518) RTSP_SERVICE: RTSP_STATE_PLAY[0m
+[0;32mI (316534) ESP_RTSP_SERVER: TX:
+
+RTSP/1.0 200 OK
+CSeq: 5
+Session: 3512037
+
+[0m
+[0;31mE (327297) ESP_RTSP_SERVER: Error occurred during receiving: errno 113[0m
+[0;31mE (327305) ESP_RTSP_SERVER: Error occurred during receiving: errno 128[0m
+[0;32mI (327317) AV_STREAM: _audio_enc task stoped[0m
+[0;32mI (327358) AV_STREAM: _video_enc task stoped[0m
+[0;32mI (327367) RTSP_SERVICE: RTSP_STATE_TEARDOWN[0m
+[0;32mI (327367) ESP_RTSP_SERVER: Remote RTSP client exit[0m
+[0;32mI (510704) ESP_RTSP_SERVER: RTSP Client ip address: 192.168.1.175[0m
+[0;32mI (510705) ESP_RTSP_SERVER: RX:
+
+OPTIONS rtsp://192.168.1.182:8554/stream RTSP/1.0
+CSeq: 1
+User-Agent: Lavf58.76.100
+
+[0m
+[0;32mI (510712) ESP_RTSP_SERVER: RTSP received [OPTIONS], len 89[0m
+[0;32mI (510719) ESP_RTSP_SERVER: TX:
+
+RTSP/1.0 200 OK
+CSeq: 1
+Public: OPTIONS, DESCRIBE, SETUP, PLAY, TEARDOWN
+Server: ESP32-RTSP-Server 1.1.0
+
+[0m
+[0;32mI (510746) ESP_RTSP_SERVER: RX:
+
+DESCRIBE rtsp://192.168.1.182:8554/stream RTSP/1.0
+Accept: application/sdp
+CSeq: 2
+User-Agent: Lavf58.76.100
+
+[0m
+[0;32mI (510750) ESP_RTSP_SERVER: RTSP received [DESCRIBE], len 115[0m
+[0;32mI (510757) ESP_RTSP_SERVER: TX:
+
+RTSP/1.0 200 OK
+CSeq: 2
+Content-Type: application/sdp
+Content-Length: 205 
+
+v=0
+o=Z 0 3 IN IP4 0.0.0.0
+s=Z
+t=0 0
+c=IN IP4 0.0.0.0
+m=audio 0 RTP/AVP 8 101
+a=rtpmap:8 PCMA/8000
+a=rtpmap:101 telephone-event/8000
+a=control:trackID=0
+m=video 0 RTP/AVP 26
+a=control:trackID=1
+[0m
+[0;32mI (510798) ESP_RTSP_SERVER: RX:
+
+SETUP rtsp://192.168.1.182:8554/stream/trackID=0 RTSP/1.0
+Transport: RTP/AVP/TCP;unicast;interleaved=0-1
+CSeq: 3
+User-Agent: Lavf58.76.100
+
+[0m
+[0;32mI (510804) ESP_RTSP_SERVER: RTSP received [SETUP], len 145[0m
+[0;32mI (510811) RTSP_SERVICE: RTSP_STATE_SETUP[0m
+[0;32mI (510814) ESP_RTSP_SERVER: TX:
+
+RTSP/1.0 200 OK
+Transport: RTP/AVP/TCP;unicast;interleaved=0-1
+CSeq: 3
+Session: 7320132
+
+[0m
+[0;32mI (510841) ESP_RTSP_SERVER: RX:
+
+SETUP rtsp://192.168.1.182:8554/stream/trackID=1 RTSP/1.0
+Transport: RTP/AVP/TCP;unicast;interleaved=2-3
+CSeq: 4
+User-Agent: Lavf58.76.100
+Session: 7320132
+
+[0m
+[0;32mI (510849) ESP_RTSP_SERVER: RTSP received [SETUP], len 163[0m
+[0;32mI (510855) RTSP_SERVICE: RTSP_STATE_SETUP[0m
+[0;32mI (510859) ESP_RTSP_SERVER: TX:
+
+RTSP/1.0 200 OK
+Transport: RTP/AVP/TCP;unicast;interleaved=2-3
+CSeq: 4
+Session: 7320132
+
+[0m
+[0;32mI (510883) ESP_RTSP_SERVER: RX:
+
+PLAY rtsp://192.168.1.182:8554/stream RTSP/1.0
+Range: npt=0.000-
+CSeq: 5
+User-Agent: Lavf58.76.100
+Session: 7320132
+
+[0m
+[0;32mI (510888) ESP_RTSP_SERVER: RTSP received [PLAY], len 123[0m
+[0;33mW (510895) AV_STREAM: Resampling disabled, using raw audio data[0m
+[0;32mI (510900) AUDIO_PIPELINE: Func:audio_pipeline_run, Line:359, MEM Total:8500312 Bytes, Inter:257743 Bytes, Dram:257743 Bytes, Dram largest free:159744Bytes[0m
+
+[0;32mI (510914) AUDIO_PIPELINE: Pipeline started[0m
+[0;32mI (510918) AUDIO_THREAD: The _audio_enc task allocate stack on external memory[0m
+[0;32mI (510926) AV_STREAM: audio_enc started[0m
+[0;32mI (510928) AUDIO_THREAD: The _video_enc task allocate stack on external memory[0m
+[0;32mI (510936) RTSP_SERVICE: RTSP_STATE_PLAY[0m
+[0;32mI (510954) ESP_RTSP_SERVER: TX:
+
+RTSP/1.0 200 OK
+CSeq: 5
+Session: 7320132
+
+[0m
+[0;32mI (532222) ESP_RTSP_SERVER: RX:
+
+TEARDOWN rtsp://192.168.1.182:8554/stream RTSP/1.0
+CSeq: 6
+User-Agent: Lavf58.76.100
+Session: 7320132
+
+[0m
+[0;32mI (532225) ESP_RTSP_SERVER: RTSP received [TEARDOWN], len 108[0m
+[0;32mI (532232) ESP_RTSP_SERVER: TX:
+
+RTSP/1.0 200 OK
+CSeq: 6
+
+[0m
+[0;32mI (532252) AV_STREAM: _audio_enc task stoped[0m
+[0;32mI (532275) AV_STREAM: _video_enc task stoped[0m
+[0;32mI (532302) RTSP_SERVICE: RTSP_STATE_TEARDOWN[0m

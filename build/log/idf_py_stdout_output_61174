@@ -1,0 +1,103 @@
+[1/11] Performing build step for 'bootloader'
+[1/1] cd /home/hyl/work/rtsp/my_rtsp_project/build/bootloader/esp-idf/esptool_py && /home/hyl/.espressif/python_env/idf5.4_py3.10_env/bin/python /home/hyl/esp/v5.4.2/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x0 /home/hyl/work/rtsp/my_rtsp_project/build/bootloader/bootloader.bin
+Bootloader binary size 0x5760 bytes. 0x28a0 bytes (32%) free.
+[2/9] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/rtsp_service.c.obj
+In file included from /home/hyl/work/rtsp/my_rtsp_project/components/av_stream/av_stream_hal/av_stream_hal.h:28,
+                 from /home/hyl/work/rtsp/my_rtsp_project/components/av_stream/av_stream.h:28,
+                 from /home/hyl/work/rtsp/my_rtsp_project/main/rtsp_service.h:28,
+                 from /home/hyl/work/rtsp/my_rtsp_project/main/rtsp_service.c:29:
+/home/hyl/esp/esp-idf/components/driver/deprecated/driver/i2s.h:27:2: warning: #warning "This set of I2S APIs has been deprecated, please include 'driver/i2s_std.h', 'driver/i2s_pdm.h' or 'driver/i2s_tdm.h' instead. if you want to keep using the old APIs and ignore this warning, you can enable 'Suppress legacy driver deprecated warning' option under 'I2S Configuration' menu in Kconfig" [-Wcpp]
+   27 | #warning "This set of I2S APIs has been deprecated, \
+      |  ^~~~~~~
+[3/9] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/main.c.obj
+In file included from /home/hyl/work/rtsp/my_rtsp_project/components/av_stream/av_stream_hal/av_stream_hal.h:28,
+                 from /home/hyl/work/rtsp/my_rtsp_project/components/av_stream/av_stream.h:28,
+                 from /home/hyl/work/rtsp/my_rtsp_project/main/rtsp_service.h:28,
+                 from /home/hyl/work/rtsp/my_rtsp_project/main/main.c:19:
+/home/hyl/esp/esp-idf/components/driver/deprecated/driver/i2s.h:27:2: warning: #warning "This set of I2S APIs has been deprecated, please include 'driver/i2s_std.h', 'driver/i2s_pdm.h' or 'driver/i2s_tdm.h' instead. if you want to keep using the old APIs and ignore this warning, you can enable 'Suppress legacy driver deprecated warning' option under 'I2S Configuration' menu in Kconfig" [-Wcpp]
+   27 | #warning "This set of I2S APIs has been deprecated, \
+      |  ^~~~~~~
+[4/9] Linking C static library esp-idf/main/libmain.a
+[5/9] Generating ld/sections.ld
+[6/9] Linking CXX executable my_rtsp_project.elf
+[7/9] Generating binary image from built executable
+esptool.py v4.9.0
+Creating esp32s3 image...
+Merged 2 ELF sections
+Successfully created esp32s3 image.
+Generated /home/hyl/work/rtsp/my_rtsp_project/build/my_rtsp_project.bin
+[8/9] cd /home/hyl/work/rtsp/my_rtsp_project/build/esp-idf/esptool_py && /home/hyl/.espressif/python_env/idf5.4_py3.10_env/bin/python /home/hyl/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 partition --type app /home/hyl/work/rtsp/my_rtsp_project/build/partition_table/partition-table.bin /home/hyl/work/rtsp/my_rtsp_project/build/my_rtsp_project.bin
+my_rtsp_project.bin binary size 0xfbae0 bytes. Smallest app partition is 0x400000 bytes. 0x304520 bytes (75%) free.
+[8/9] cd /home/hyl/esp/esp-idf/components/esptool_py && /usr/bin/cmake -D IDF_PATH=/home/hyl/esp/esp-idf -D "SERIAL_TOOL=/home/hyl/.espressif/python_env/idf5.4_py3.10_env/bin/python;;/home/hyl/esp/esp-idf/components/esptool_py/esptool/esptool.py;--chip;esp32s3" -D "SERIAL_TOOL_ARGS=--before=default_reset;--after=hard_reset;write_flash;@flash_args" -D WORKING_DIRECTORY=/home/hyl/work/rtsp/my_rtsp_project/build -P /home/hyl/esp/esp-idf/components/esptool_py/run_serial_tool.cmake
+esptool.py --chip esp32s3 -p /dev/ttyACM0 -b 460800 --before=default_reset --after=hard_reset write_flash --flash_mode dio --flash_freq 80m --flash_size 8MB 0x0 bootloader/bootloader.bin 0x10000 my_rtsp_project.bin 0x8000 partition_table/partition-table.bin
+esptool.py v4.9.0
+Serial port /dev/ttyACM0
+Connecting...
+Chip is ESP32-S3 (QFN56) (revision v0.2)
+Features: WiFi, BLE, Embedded PSRAM 8MB (AP_3v3)
+Crystal is 40MHz
+USB mode: USB-Serial/JTAG
+MAC: d8:3b:da:46:fd:78
+Uploading stub...
+Running stub...
+Stub running...
+Changing baud rate to 460800
+Changed.
+Configuring flash size...
+Flash will be erased from 0x00000000 to 0x00005fff...
+Flash will be erased from 0x00010000 to 0x0010bfff...
+Flash will be erased from 0x00008000 to 0x00008fff...
+SHA digest in image updated
+Compressed 22368 bytes to 14206...
+Writing at 0x00000000... (100 %)
+Wrote 22368 bytes (14206 compressed) at 0x00000000 in 0.4 seconds (effective 454.0 kbit/s)...
+Hash of data verified.
+Compressed 1030880 bytes to 625766...
+Writing at 0x00010000... (2 %)
+Writing at 0x0001ced8... (5 %)
+Writing at 0x00028cc3... (7 %)
+Writing at 0x0003090c... (10 %)
+Writing at 0x0003be5f... (12 %)
+Writing at 0x000425f5... (15 %)
+Writing at 0x00048a42... (17 %)
+Writing at 0x0004f1b8... (20 %)
+Writing at 0x00054f9e... (23 %)
+Writing at 0x0005ab88... (25 %)
+Writing at 0x00062992... (28 %)
+Writing at 0x00068fd9... (30 %)
+Writing at 0x0006f31d... (33 %)
+Writing at 0x00074f45... (35 %)
+Writing at 0x0007ae55... (38 %)
+Writing at 0x00080b7c... (41 %)
+Writing at 0x0008662b... (43 %)
+Writing at 0x0008c297... (46 %)
+Writing at 0x00091eb9... (48 %)
+Writing at 0x00098157... (51 %)
+Writing at 0x0009e143... (53 %)
+Writing at 0x000a3f22... (56 %)
+Writing at 0x000a9242... (58 %)
+Writing at 0x000ae1a2... (61 %)
+Writing at 0x000b39c0... (64 %)
+Writing at 0x000b9159... (66 %)
+Writing at 0x000be6df... (69 %)
+Writing at 0x000c3bb8... (71 %)
+Writing at 0x000c99b1... (74 %)
+Writing at 0x000cf4c1... (76 %)
+Writing at 0x000d5195... (79 %)
+Writing at 0x000dac7c... (82 %)
+Writing at 0x000e04a6... (84 %)
+Writing at 0x000ea1f6... (87 %)
+Writing at 0x000f1804... (89 %)
+Writing at 0x000f6959... (92 %)
+Writing at 0x000fc88e... (94 %)
+Writing at 0x0010456b... (97 %)
+Writing at 0x0010a70c... (100 %)
+Wrote 1030880 bytes (625766 compressed) at 0x00010000 in 8.6 seconds (effective 962.4 kbit/s)...
+Hash of data verified.
+Compressed 3072 bytes to 105...
+Writing at 0x00008000... (100 %)
+Wrote 3072 bytes (105 compressed) at 0x00008000 in 0.0 seconds (effective 583.8 kbit/s)...
+Hash of data verified.
+
+Leaving...
+Hard resetting via RTS pin...
