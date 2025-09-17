@@ -1,0 +1,214 @@
+/*
+ * 简化版麦克风HAL - 只包含基本功能
+ * 基于Arduino代码配置：CLK=42, DIN=41, 16kHz, 16bit, 单声道
+ */
+
+#include <string.h>
+#include "esp_log.h"
+#include "audio_mem.h"
+#include "av_stream_hal.h"
+#include "driver/i2s_pdm.h"
+#include "driver/gpio.h"
+
+static const char *TAG = "CUSTOM_AUDIO_HAL";
+
+// XIAO ESP32-S3-Sense PDM麦克风引脚定义
+#define PDM_CLK_IO                 42  // PDM时钟引脚
+#define PDM_DIN_IO                 41  // PDM数据输入引脚
+
+// 音频设备结构体
+typedef struct {
+    i2s_chan_handle_t i2s_chan;
+    bool is_initialized;
+    bool is_recording;
+} custom_audio_device_t;
+
+static custom_audio_device_t g_audio_device = {0};
+
+// 麦克风初始化
+esp_err_t custom_i2s_mic_init(uint32_t sample_rate, uint8_t bit_depth, uint8_t channels, uint32_t buffer_size)
+{
+    if (g_audio_device.is_initialized) {
+        ESP_LOGI(TAG, "I2S microphone already initialized");
+        return ESP_OK;
+    }
+    
+    ESP_LOGI(TAG, "Initializing I2S/PDM microphone: %dHz, %dbit, %dch", 
+             (int)sample_rate, (int)bit_depth, (int)channels);
+    
+    // PDM配置
+    i2s_pdm_rx_config_t pdm_rx_cfg = {
+        .clk_cfg = I2S_PDM_RX_CLK_DEFAULT_CONFIG(sample_rate),
+        .slot_cfg = I2S_PDM_RX_SLOT_DEFAULT_CONFIG(bit_depth, 
+                   channels == 1 ? I2S_SLOT_MODE_MONO : I2S_SLOT_MODE_STEREO),
+        .gpio_cfg = {
+            .clk = PDM_CLK_IO,
+            .din = PDM_DIN_IO,
+            .invert_flags = {
+                .clk_inv = false,
+            },
+        },
+    };
+    
+    // 创建I2S通道配置
+    i2s_chan_config_t chan_cfg = I2S_CHANNEL_DEFAULT_CONFIG(I2S_NUM_0, I2S_ROLE_MASTER);
+    
+    // 创建I2S通道
+    esp_err_t ret = i2s_new_channel(&chan_cfg, NULL, &g_audio_device.i2s_chan);
+    if (ret != ESP_OK) {
+        ESP_LOGE(TAG, "Failed to create I2S channel: %s", esp_err_to_name(ret));
+        return ret;
+    }
+    
+    // 初始化PDM接收模式
+    ret = i2s_channel_init_pdm_rx_mode(g_audio_device.i2s_chan, &pdm_rx_cfg);
+    if (ret != ESP_OK) {
+        ESP_LOGE(TAG, "Failed to initialize PDM RX mode: %s", esp_err_to_name(ret));
+        i2s_del_channel(g_audio_device.i2s_chan);
+        g_audio_device.i2s_chan = NULL;
+        return ESP_FAIL;
+    }
+    
+    g_audio_device.is_initialized = true;
+    g_audio_device.is_recording = false;
+    
+    ESP_LOGI(TAG, "I2S/PDM microphone initialized successfully");
+    return ESP_OK;
+}
+
+// 麦克风反初始化
+esp_err_t custom_i2s_mic_deinit(void)
+{
+    if (!g_audio_device.is_initialized) {
+        return ESP_OK;
+    }
+    
+    ESP_LOGI(TAG, "Deinitializing I2S/PDM microphone");
+    
+    // 禁用并删除I2S通道
+    if (g_audio_device.i2s_chan != NULL) {
+        i2s_channel_disable(g_audio_device.i2s_chan);
+        i2s_del_channel(g_audio_device.i2s_chan);
+        g_audio_device.i2s_chan = NULL;
+    }
+    
+    // 重置设备状态
+    memset(&g_audio_device, 0, sizeof(custom_audio_device_t));
+    
+    return ESP_OK;
+}
+
+// 麦克风读取
+int custom_av_stream_audio_read(char *buf, int len, TickType_t wait_time)
+{
+    if (!g_audio_device.is_initialized || !g_audio_device.is_recording) {
+        return ESP_FAIL;
+    }
+    
+    size_t bytes_read = 0;
+    esp_err_t ret = i2s_channel_read(g_audio_device.i2s_chan, buf, len, &bytes_read, wait_time);
+    if (ret != ESP_OK) {
+        ESP_LOGE(TAG, "I2S read error: %s", esp_err_to_name(ret));
+        return ESP_FAIL;
+    }
+    
+    return bytes_read;
+}
+
+// 麦克风写入（XIAO ESP32-S3-Sense没有扬声器）
+int custom_av_stream_audio_write(char *buf, int len, TickType_t wait_time)
+{
+    return 0;
+}
+
+// 启动录音
+esp_err_t custom_i2s_mic_start(void)
+{
+    if (!g_audio_device.is_initialized) {
+        return ESP_ERR_INVALID_STATE;
+    }
+    
+    if (g_audio_device.is_recording) {
+        return ESP_OK;
+    }
+    
+    ESP_LOGI(TAG, "Starting I2S/PDM microphone recording");
+    
+    esp_err_t ret = i2s_channel_enable(g_audio_device.i2s_chan);
+    if (ret != ESP_OK) {
+        ESP_LOGE(TAG, "Failed to enable I2S channel: %s", esp_err_to_name(ret));
+        return ret;
+    }
+    
+    g_audio_device.is_recording = true;
+    return ESP_OK;
+}
+
+// 停止录音
+esp_err_t custom_i2s_mic_stop(void)
+{
+    if (!g_audio_device.is_initialized || !g_audio_device.is_recording) {
+        return ESP_OK;
+    }
+    
+    ESP_LOGI(TAG, "Stopping I2S/PDM microphone recording");
+    
+    g_audio_device.is_recording = false;
+    
+    esp_err_t ret = i2s_channel_disable(g_audio_device.i2s_chan);
+    if (ret != ESP_OK) {
+        ESP_LOGE(TAG, "Failed to disable I2S channel: %s", esp_err_to_name(ret));
+    }
+    
+    return ESP_OK;
+}
+
+// 音频HAL初始化
+audio_board_handle_t custom_av_stream_audio_init(void *ctx, void *arg, av_stream_hal_config_t *config)
+{
+    AUDIO_NULL_CHECK(TAG, config, return NULL);
+    
+    ESP_LOGI(TAG, "Initializing custom audio HAL for XIAO ESP32-S3-Sense");
+    
+    // 初始化PDM麦克风
+    esp_err_t ret = custom_i2s_mic_init(config->audio_samplerate, 16, 1, 2048);
+    if (ret != ESP_OK) {
+        ESP_LOGE(TAG, "Failed to initialize PDM microphone");
+        return NULL;
+    }
+    
+    // 启动录音
+    ret = custom_i2s_mic_start();
+    if (ret != ESP_OK) {
+        ESP_LOGE(TAG, "Failed to start PDM microphone");
+        custom_i2s_mic_deinit();
+        return NULL;
+    }
+    
+    ESP_LOGI(TAG, "Custom audio HAL initialized successfully");
+    
+    // 返回一个虚拟的board handle
+    audio_board_handle_t board_handle = audio_calloc(1, sizeof(audio_board_handle_t));
+    if (board_handle == NULL) {
+        custom_i2s_mic_stop();
+        custom_i2s_mic_deinit();
+        return NULL;
+    }
+    
+    return board_handle;
+}
+
+// 音频HAL反初始化
+int custom_av_stream_audio_deinit(void *ctx, bool uac_en)
+{
+    ESP_LOGI(TAG, "Deinitializing custom audio HAL");
+    
+    custom_i2s_mic_stop();
+    esp_err_t ret = custom_i2s_mic_deinit();
+    
+    if (ctx != NULL) {
+        audio_free(ctx);
+    }
+    
+    return ret;
+}
