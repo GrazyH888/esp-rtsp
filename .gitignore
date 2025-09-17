@@ -1,0 +1,96 @@
+# ESP-IDF 构建输出
+build/
+# sdkconfig
+sdkconfig.old
+
+# ESP-IDF 组件管理器安装的组件
+managed_components/
+
+# IDE文件
+.vscode/
+.vscode/settings.json
+.idea/
+*.sublime-project
+*.sublime-workspace
+.cproject
+.project
+.settings/
+*.code-workspace
+
+# 编译生成的文件
+*.o
+*.obj
+*.elf
+*.bin
+*.map
+*.hex
+*.dis
+*.exe
+*.out
+*.app
+*.i*86
+*.x86_64
+*.hex
+
+# 调试文件
+.gdb_history
+.gdbinit
+
+# 依赖文件
+*.d
+
+# 预编译文件
+*.gch
+*.pch
+
+# 库文件
+*.lib
+# *.a
+*.la
+*.lo
+
+# 共享对象文件
+*.dll
+*.so
+*.so.*
+*.dylib
+
+# 可执行文件
+*.exe
+*.out
+*.app
+*.i*86
+*.x86_64
+*.hex
+
+# 日志文件
+*.log
+
+# 临时文件
+*.swp
+*.bak
+*.tmp
+*~
+*.orig
+\#*\#
+.\#*
+
+# macOS特定文件
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Windows特定文件
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# 其他项目特定文件
+*.csv
+!partitions.csv 
+.pre-commit-config.yaml
+.vscode/c_cpp_properties.json
+.vscode/launch.json
+.vscode/settings.json
