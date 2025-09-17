@@ -24,8 +24,8 @@
 // 修改WiFi配置
 // #define WIFI_SSID  "GrazyH"
 // #define WIFI_PWD   "123456789"
-// #define WIFI_SSID  "Skyris2"
-#define WIFI_SSID  "skyris_debug"
+#define WIFI_SSID  "Skyris2"
+// #define WIFI_SSID  "skyris_debug"
 #define WIFI_PWD   "skyrisai"
 
 static av_stream_handle_t av_stream;
